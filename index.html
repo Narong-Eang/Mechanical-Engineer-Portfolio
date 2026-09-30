@@ -1,1 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mechanical engineering portfolio of Hynarong Eang, RMIT University student in Melbourne.">
+  <title>Hynarong Eang | Mechanical Engineering Portfolio</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f4f6f5;
+      --surface: #ffffff;
+      --text: #182522;
+      --muted: #52625e;
+      --line: #d8e0dc;
+      --accent: #12634f;
+      --accent-soft: #e2f1eb;
+      --max: 980px;
+    }
 
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #101715;
+        --surface: #18211e;
+        --text: #edf4f0;
+        --muted: #b3c2bb;
+        --line: #35423d;
+        --accent: #8ad4b5;
+        --accent-soft: #20352d;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    a { color: var(--accent); }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .wrap { width: min(var(--max), calc(100% - 36px)); margin-inline: auto; }
+    .skip {
+      position: absolute; left: -9999px; top: 8px;
+      background: var(--surface); padding: 10px;
+    }
+    .skip:focus { left: 8px; z-index: 5; }
+    header { padding: 30px 0 36px; }
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 16px; margin-bottom: 38px;
+    }
+    nav a { text-decoration: none; font-weight: 650; }
+    .nav-links { display: flex; gap: 18px; }
+    .eyebrow {
+      color: var(--accent); font-size: .88rem; font-weight: 750;
+      letter-spacing: .06em; text-transform: uppercase;
+    }
+    h1 { margin: 8px 0; font-size: clamp(2.5rem, 9vw, 4.6rem); line-height: 1.02; }
+    h2 { font-size: clamp(1.6rem, 5vw, 2.2rem); line-height: 1.15; }
+    h3 { line-height: 1.25; }
+    .lead { max-width: 680px; font-size: clamp(1.1rem, 3vw, 1.35rem); }
+    .muted { color: var(--muted); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 22px 0; }
+    .button {
+      display: inline-block; padding: 12px 17px; min-height: 48px;
+      border: 2px solid var(--accent); border-radius: 8px;
+      background: var(--accent); color: #fff; font-weight: 750;
+      text-decoration: none;
+    }
+    .button.secondary { background: transparent; color: var(--accent); }
+    .featured {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px; margin-top: 28px;
+    }
+    .featured a, .card, .case {
+      border: 1px solid var(--line); border-radius: 12px;
+      background: var(--surface);
+    }
+    .featured a {
+      display: block; padding: 15px; color: var(--text);
+      font-weight: 700; text-decoration: none;
+    }
+    main section { padding: 34px 0; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .card { padding: 18px; }
+    .card h3 { margin-top: 0; }
+    .case { padding: clamp(18px, 4vw, 30px); margin: 18px 0; scroll-margin-top: 20px; }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; }
+    .facts p { margin: 6px 0; }
+    .visual {
+      margin: 18px 0 0; padding: 18px; border-radius: 8px;
+      background: var(--accent-soft); color: var(--text);
+    }
+    .visual strong { display: block; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; }
+    .tags li { padding: 5px 10px; border-radius: 99px; background: var(--accent-soft); }
+    footer { border-top: 1px solid var(--line); padding: 28px 0 42px; }
+    @media (max-width: 700px) {
+      .featured, .grid, .facts { grid-template-columns: 1fr; }
+      .nav-links { gap: 12px; }
+      header { padding-top: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="wrap" id="top">
+    <nav aria-label="Main navigation">
+      <a href="#top">Hynarong Eang</a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <p class="eyebrow">Mechanical Engineering · RMIT University · Melbourne</p>
+    <h1>Hynarong Eang</h1>
+    <p class="lead"><strong>Mechanical engineering student seeking internship and graduate roles in design engineering and manufacturing.</strong></p>
+    <p class="muted">I’m a third-year Mechanical Engineering (Honours) student at RMIT. My project work includes CAD design, prototyping, engineering analysis, and testing.</p>
+
+    <div class="actions">
+      <a class="button" href="resume.pdf">Download resume PDF</a>
+      <a class="button secondary" href="https://www.linkedin.com/in/hynarong-eang">LinkedIn</a>
+    </div>
+
+    <p><strong>Featured projects</strong></p>
+    <div class="featured">
+      <a href="#rover">RMIT Rover Team<br><span class="muted">End-effector prototypes</span></a>
+      <a href="#warman">Warman Competition<br><span class="muted">Autonomous robot</span></a>
+      <a href="#vessel">Pressure vessel<br><span class="muted">AS 1210 coursework design</span></a>
+    </div>
+  </header>
+
+  <main class="wrap" id="main">
+    <section id="projects">
+      <h2>Selected engineering projects</h2>
+      <p class="muted">Each case study summarizes the problem, my role, design process, and documented result.</p>
+
+      <article class="case" id="rover">
+        <p class="eyebrow">Mechanical design · RMIT Rover Team</p>
+        <h2>Rover end-effector prototypes</h2>
+        <div class="facts">
+          <p><strong>Problem</strong><br>Develop an end-effector to support the rover team’s payload-handling tasks.</p>
+          <p><strong>My role</strong><br>Payload Team Member; developed and evaluated three end-effector prototypes.</p>
+          <p><strong>Constraints</strong><br>Project requirements, functionality, manufacturability, and assembly.</p>
+          <p><strong>Process</strong><br>Used five 3D-printed components and completed three design iterations through peer review and engineering evaluation.</p>
+          <p><strong>Result</strong><br>Compared concepts and refined the design against project requirements. Add a measured test result if available.</p>
+          <p><strong>Tools</strong><br>Onshape, 3D printing, mechanical assembly, and testing.</p>
+        </div>
+        <div class="visual"><strong>Project visual to add</strong>Use a CAD render of the end-effector and a photo of the printed prototype or test setup.</div>
+      </article>
+
+      <article class="case" id="warman">
+        <p class="eyebrow">Competition · Autonomous robot</p>
+        <h2>Warman Competition robot</h2>
+        <div class="facts">
+          <p><strong>Problem</strong><br>Design and build an autonomous robot that meets competition requirements.</p>
+          <p><strong>My role</strong><br>Collaborated in a six-person team integrating mechanical and electrical components.</p>
+          <p><strong>Constraints</strong><br>Competition requirements and reliable system integration.</p>
+          <p><strong>Process</strong><br>Completed more than ten testing and troubleshooting cycles to identify and address system issues.</p>
+          <p><strong>Result</strong><br>Runner-up in the Warman Competition.</p>
+          <p><strong>Tools</strong><br>Add the specific CAD, fabrication, and control tools you used on this project.</p>
+        </div>
+        <div class="visual"><strong>Project visual to add</strong>Use a clear photo of the robot, plus a labelled mechanism or subsystem view showing your contribution.</div>
+      </article>
+
+      <article class="case" id="vessel">
+        <p class="eyebrow">Mechanical design · Coursework</p>
+        <h2>Compressed-air pressure vessel</h2>
+        <div class="facts">
+          <p><strong>Problem</strong><br>Design a vertical Class 2A compressed-air vessel with an 8 m³ internal volume and 862 kPa gauge design pressure.</p>
+          <p><strong>My role</strong><br>Designed the vessel for Mechanical Design 2 coursework.</p>
+          <p><strong>Constraints</strong><br>Applied AS 1210 requirements and selected material and components for the design.</p>
+          <p><strong>Process</strong><br>Calculated shell and head thickness, reinforcement, weld efficiency, corrosion allowance, and hydrostatic test pressure; prepared drawings to AS 1100.</p>
+          <p><strong>Result</strong><br>Completed documented design calculations and technical drawings for the vessel.</p>
+          <p><strong>Tools</strong><br>SolidWorks, Excel, AS 1210, and AS 1100.</p>
+        </div>
+        <div class="visual"><strong>Project visual to add</strong>Use a vessel CAD render and a readable crop of the drawing or calculation summary.</div>
+      </article>
+    </section>
+
+    <section>
+      <h2>Tools and skills</h2>
+      <ul class="tags">
+        <li>SolidWorks</li><li>Onshape</li><li>CATIA V5</li><li>ANSYS</li>
+        <li>MATLAB / Simulink</li><li>3D printing</li><li>Machining</li>
+        <li>Mechanical assembly</li><li>Technical drawings</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>For internship and graduate opportunities in mechanical design and manufacturing:</p>
+      <p><a href="mailto:narongeang123@gmail.com">narongeang123@gmail.com</a> ·
+        <a href="https://www.linkedin.com/in/hynarong-eang">LinkedIn</a></p>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p class="muted">Hynarong Eang · Mechanical Engineering · Melbourne, Australia</p>
+  </footer>
+</body>
+</html>
