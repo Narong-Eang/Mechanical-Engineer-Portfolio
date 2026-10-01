@@ -58,6 +58,7 @@ window.ENTRIES = [
           { src: "photos/rover-wheel-detail.jpg", alt: "Detailed engineering drawing with section views of the designed rover wheel", caption: "Detailed wheel drawing" },
           { src: "photos/rover-wheel-preliminary-drawing.jpg", alt: "Preliminary dimensioned drawing of the rover wheel", caption: "Preliminary wheel drawing" }
         ]
+      },
       {
         id: "pressure-vessel-material-selection",
         title: "Pressure-vessel material selection",
