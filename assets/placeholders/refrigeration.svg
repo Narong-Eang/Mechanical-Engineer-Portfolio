@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Refrigeration system design placeholder</title><desc id="desc">Technical placeholder graphic. Replace with the refrigeration cycle or system design visual.</desc>
+  <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#25302f" stroke-width="1"/></pattern><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#11191c"/><stop offset="1" stop-color="#0b1014"/></linearGradient></defs>
+  <rect width="1200" height="760" fill="url(#bg)"/><rect width="1200" height="760" fill="url(#grid)"/>
+  <g fill="none" stroke="#b8ef72" stroke-width="4" opacity=".84" stroke-linecap="round" stroke-linejoin="round"><rect x="466" y="185" width="268" height="90" rx="12"/><rect x="705" y="335" width="130" height="94" rx="10"/><rect x="466" y="498" width="268" height="90" rx="12"/><rect x="365" y="335" width="130" height="94" rx="10"/><path d="M600 275v60m105 47h-210m105 47v59m-105-210h210"/><path d="M600 312l-14 20m14-20 14 20M518 382l-20-14m20 14-20 14m184 0 20-14m-20 14 20 14M600 467l-14 20m14-20 14 20"/></g>
+  <g fill="#d9e2dd" font-family="monospace" font-size="18" text-anchor="middle"><text x="600" y="237">HEAT EXCHANGER</text><text x="770" y="390">VALVE</text><text x="600" y="550">EVAPORATOR</text><text x="430" y="390">COMPRESSOR</text></g>
+  <text x="54" y="78" fill="#b8ef72" font-family="monospace" font-size="21" letter-spacing="3">PROJECT VISUAL / 05</text>
+  <text x="54" y="697" fill="#e7ede9" font-family="monospace" font-size="24" letter-spacing="2">ADD REFRIGERATION CYCLE OR SYSTEM DIAGRAM</text>
+</svg>

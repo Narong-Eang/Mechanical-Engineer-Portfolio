@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0A0C10">
+  <meta name="theme-color" content="#ffffff">
   <meta name="description" content="Hynarong Eang's mechanical engineering project timeline at RMIT University.">
   <title>Hynarong Eang — Engineering Timeline</title>
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #0a0c10;
-      --panel: #10141c;
-      --panel-2: #141a24;
-      --line: #293244;
-      --line-bright: #3b4963;
-      --text: #eef1f8;
-      --muted: #a1aabd;
-      --quiet: #73809a;
-      --accent: #849aff;
-      --accent-soft: rgb(132 154 255 / 12%);
-      --accent-ink: #0a0c10;
+      color-scheme: light;
+      --bg: #ffffff;
+      --panel: #ffffff;
+      --panel-2: #f4f4f4;
+      --line: #dedede;
+      --line-bright: #a8a8a8;
+      --text: #111111;
+      --muted: #505050;
+      --quiet: #707070;
+      --accent: #111111;
+      --accent-soft: #eeeeee;
+      --accent-ink: #ffffff;
       --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
       --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --max: 1120px;
@@ -40,7 +40,7 @@
 
     .skip-link { position: fixed; z-index: 100; top: .75rem; left: .75rem; padding: .65rem .9rem; border-radius: 8px; background: var(--accent); color: var(--accent-ink); transform: translateY(-160%); }
     .skip-link:focus { transform: translateY(0); }
-    .topbar { position: sticky; z-index: 20; top: 0; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem; min-height: 72px; padding: .7rem max(1rem, calc((100vw - var(--max)) / 2)); border-bottom: 1px solid var(--line); background: rgb(10 12 16 / 94%); backdrop-filter: blur(14px); }
+    .topbar { position: sticky; z-index: 20; top: 0; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem; min-height: 72px; padding: .7rem max(1rem, calc((100vw - var(--max)) / 2)); border-bottom: 1px solid var(--line); background: rgb(255 255 255 / 95%); backdrop-filter: blur(14px); }
     .back-link { justify-self: start; color: var(--muted); text-decoration: none; white-space: nowrap; font-size: .85rem; }
     .back-link:hover { color: var(--accent); }
     .profile { display: grid; gap: .12rem; text-align: center; }
@@ -65,18 +65,18 @@
     .filter[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
 
     .timeline { position: relative; display: grid; gap: 2.2rem; padding: 1rem 0 4.8rem; margin: 0; list-style: none; }
-    .timeline::before { position: absolute; top: 0; bottom: 4.8rem; left: 50%; width: 17px; background: repeating-linear-gradient(to bottom, transparent 0 17px, rgb(132 154 255 / 55%) 17px 18px, transparent 18px 36px); content: ""; transform: translateX(-50%); }
+    .timeline::before { position: absolute; top: 0; bottom: 4.8rem; left: 50%; width: 17px; background: repeating-linear-gradient(to bottom, transparent 0 17px, rgb(17 17 17 / 38%) 17px 18px, transparent 18px 36px); content: ""; transform: translateX(-50%); }
     .timeline::after { position: absolute; top: 0; bottom: 4.8rem; left: 50%; width: 1px; background: linear-gradient(to bottom, var(--accent), var(--line) 16%, var(--line) 88%, transparent); content: ""; transform: translateX(-50%); }
     .timeline-item { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 76px minmax(0, 1fr); align-items: start; }
     .timeline-node { z-index: 1; grid-column: 2; grid-row: 1; display: grid; justify-items: center; gap: .45rem; padding-top: 1.35rem; }
-    .timeline-node__dot { width: 13px; height: 13px; border: 3px solid var(--bg); border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 0 18px rgb(132 154 255 / 28%); }
+    .timeline-node__dot { width: 13px; height: 13px; border: 3px solid var(--bg); border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
     .timeline-node__index { color: var(--quiet); font: .61rem var(--mono); }
     .entry-card { grid-column: 1; grid-row: 1; overflow: hidden; border: 1px solid var(--line); border-radius: 15px; background: var(--panel); transition: border-color .2s ease, transform .2s ease, background .2s ease; }
     .timeline-item:nth-child(even) .entry-card { grid-column: 3; }
-    .entry-card:hover { transform: translateY(-3px); border-color: var(--line-bright); background: #111722; }
+    .entry-card:hover { transform: translateY(-3px); border-color: var(--line-bright); background: #fafafa; }
     .entry-link { display: block; color: inherit; text-decoration: none; }
-    .cover, .photo-placeholder { position: relative; display: grid; place-items: center; overflow: hidden; min-height: 190px; aspect-ratio: 1.85; padding: 1rem; background-color: #0d1118; background-image: linear-gradient(rgb(132 154 255 / 4%) 1px, transparent 1px), linear-gradient(90deg, rgb(132 154 255 / 4%) 1px, transparent 1px); background-size: 28px 28px; }
-    .cover::before, .photo-placeholder::before { position: absolute; width: min(30%, 170px); aspect-ratio: 1; border: 1px solid rgb(132 154 255 / 42%); border-radius: 50%; content: ""; box-shadow: 0 0 0 18px rgb(132 154 255 / 4%), 0 0 0 40px rgb(132 154 255 / 3%); }
+    .cover, .photo-placeholder { position: relative; display: grid; place-items: center; overflow: hidden; min-height: 190px; aspect-ratio: 1.85; padding: 1rem; background-color: #f7f7f7; background-image: linear-gradient(rgb(17 17 17 / 5%) 1px, transparent 1px), linear-gradient(90deg, rgb(17 17 17 / 5%) 1px, transparent 1px); background-size: 28px 28px; }
+    .cover::before, .photo-placeholder::before { position: absolute; width: min(30%, 170px); aspect-ratio: 1; border: 1px solid rgb(17 17 17 / 30%); border-radius: 50%; content: ""; box-shadow: 0 0 0 18px rgb(17 17 17 / 3%), 0 0 0 40px rgb(17 17 17 / 2%); }
     .cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     .photo-placeholder__text { position: relative; display: grid; justify-items: center; gap: .55rem; color: var(--muted); text-align: center; }
     .photo-placeholder__symbol { color: var(--accent); font: 1.8rem var(--mono); }
@@ -88,7 +88,7 @@
     .category-label { color: var(--quiet); font: .61rem var(--mono); text-align: right; text-transform: uppercase; }
     .entry-copy h2 { margin: 0; font-size: clamp(1.24rem, 2.8vw, 1.72rem); line-height: 1.18; letter-spacing: -.035em; }
     .entry-copy__summary { margin: 0; color: var(--muted); font-size: .91rem; line-height: 1.65; }
-    .entry-copy__description { margin: 0; color: #d0d5df; font-size: .84rem; line-height: 1.7; }
+    .entry-copy__description { margin: 0; color: #333333; font-size: .84rem; line-height: 1.7; }
     .tags { display: flex; flex-wrap: wrap; gap: .42rem; padding: 0; margin: 0; list-style: none; }
     .tag { padding: .34rem .48rem; border: 1px solid var(--line); border-radius: 5px; color: var(--muted); font-size: .58rem; letter-spacing: .035em; }
     .card-cta { display: inline-flex; align-items: center; gap: .55rem; color: var(--accent); font: .67rem var(--mono); letter-spacing: .06em; text-transform: uppercase; }
@@ -101,43 +101,43 @@
     .footer a:hover { color: var(--accent); }
 
     dialog { color: var(--text); }
-    .detail-dialog, .lightbox { padding: 0; border: 1px solid var(--line-bright); background: var(--panel); box-shadow: 0 24px 100px rgb(0 0 0 / 65%); }
+    .detail-dialog, .lightbox { padding: 0; border: 1px solid var(--line-bright); background: var(--panel); box-shadow: 0 24px 100px rgb(0 0 0 / 45%); }
     .detail-dialog { width: min(1080px, calc(100vw - 2rem)); max-width: none; max-height: 92dvh; border-radius: 16px; }
-    .detail-dialog::backdrop, .lightbox::backdrop { background: rgb(3 5 9 / 84%); backdrop-filter: blur(7px); }
+    .detail-dialog::backdrop, .lightbox::backdrop { background: rgb(0 0 0 / 72%); backdrop-filter: blur(5px); }
     .detail-shell { display: grid; grid-template-rows: auto minmax(0, 1fr); max-height: inherit; }
-    .detail-top { position: sticky; top: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: .7rem; min-height: 59px; padding: .65rem .9rem; border-bottom: 1px solid var(--line); background: rgb(16 20 28 / 96%); }
+    .detail-top { position: sticky; top: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: .7rem; min-height: 59px; padding: .65rem .9rem; border-bottom: 1px solid var(--line); background: rgb(255 255 255 / 97%); }
     .detail-top__date { color: var(--accent); font: .65rem var(--mono); letter-spacing: .06em; text-transform: uppercase; }
     .close-button { min-width: 44px; min-height: 44px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-2); cursor: pointer; }
     .close-button:hover { border-color: var(--accent); color: var(--accent); }
     .detail-scroll { overflow: auto; overscroll-behavior: contain; }
     .detail-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr); gap: clamp(1.2rem, 3vw, 2.7rem); padding: clamp(.9rem, 3vw, 2rem); }
     .gallery { min-width: 0; }
-    .gallery-stage { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 11px; background: #0b0e14; }
+    .gallery-stage { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 11px; background: #f7f7f7; }
     .gallery-main { display: grid; place-items: center; width: 100%; min-height: 250px; aspect-ratio: 1.35; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
     .gallery-main img { width: 100%; height: 100%; max-height: 560px; object-fit: contain; }
     .gallery-stage .photo-placeholder { width: 100%; min-height: 250px; aspect-ratio: 1.35; }
-    .gallery-arrow { position: absolute; z-index: 1; top: 50%; display: grid; place-items: center; width: 43px; height: 47px; border: 1px solid var(--line-bright); border-radius: 8px; background: rgb(10 12 16 / 88%); cursor: pointer; transform: translateY(-50%); }
+    .gallery-arrow { position: absolute; z-index: 1; top: 50%; display: grid; place-items: center; width: 43px; height: 47px; border: 1px solid var(--line-bright); border-radius: 8px; background: rgb(255 255 255 / 94%); color: #111; cursor: pointer; transform: translateY(-50%); }
     .gallery-arrow:hover { border-color: var(--accent); color: var(--accent); }
     .gallery-arrow--prev { left: .65rem; }
     .gallery-arrow--next { right: .65rem; }
-    .gallery-count { position: absolute; right: .65rem; bottom: .65rem; padding: .3rem .42rem; border-radius: 4px; background: rgb(10 12 16 / 90%); color: var(--text); font-size: .59rem; }
+    .gallery-count { position: absolute; right: .65rem; bottom: .65rem; padding: .3rem .42rem; border-radius: 4px; background: rgb(255 255 255 / 94%); color: #111; font-size: .59rem; }
     .gallery-caption { min-height: 1.7rem; margin: .55rem .1rem; color: var(--muted); font: .63rem var(--mono); }
     .thumbnails { display: flex; gap: .5rem; overflow-x: auto; padding: .15rem .1rem .55rem; scrollbar-color: var(--line-bright) transparent; scrollbar-width: thin; }
-    .thumbnail { flex: 0 0 88px; overflow: hidden; padding: 0; border: 1px solid var(--line); border-radius: 6px; background: #0b0e14; cursor: pointer; }
+    .thumbnail { flex: 0 0 88px; overflow: hidden; padding: 0; border: 1px solid var(--line); border-radius: 6px; background: #f7f7f7; cursor: pointer; }
     .thumbnail img { width: 100%; height: 60px; object-fit: cover; }
     .thumbnail[aria-current="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
     .thumbnail-placeholder { display: grid; place-items: center; min-height: 54px; padding: .45rem; color: var(--quiet); font: .55rem var(--mono); text-align: center; text-transform: uppercase; }
     .detail-copy { min-width: 0; align-self: start; }
     .detail-copy h2 { margin: .35rem 0 .85rem; font-size: clamp(1.75rem, 4vw, 2.6rem); line-height: 1.05; letter-spacing: -.05em; }
     .detail-copy__summary { color: var(--muted); line-height: 1.7; }
-    .detail-copy__description { margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid var(--line); color: #d0d5df; line-height: 1.78; white-space: pre-line; }
+    .detail-copy__description { margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid var(--line); color: #333333; line-height: 1.78; white-space: pre-line; }
     .detail-copy .tags { margin-top: 1.2rem; }
 
-    .lightbox { width: min(96vw, 1500px); max-width: none; max-height: 96dvh; border-radius: 12px; background: #05070b; }
+    .lightbox { width: min(96vw, 1500px); max-width: none; max-height: 96dvh; border-radius: 12px; background: #050505; }
     .lightbox__frame { position: relative; display: grid; place-items: center; min-height: min(90dvh, 900px); padding: 3.5rem 1rem 3rem; }
     .lightbox__frame img { max-width: 100%; max-height: calc(90dvh - 6.5rem); object-fit: contain; }
     .lightbox .close-button { position: absolute; z-index: 2; top: .7rem; right: .7rem; }
-    .lightbox__caption { position: absolute; right: 4.5rem; bottom: .7rem; left: 1rem; color: var(--muted); font: .64rem var(--mono); text-align: center; }
+    .lightbox__caption { position: absolute; right: 4.5rem; bottom: .7rem; left: 1rem; color: #ffffff; font: .64rem var(--mono); text-align: center; }
 
     html.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
     html.js .reveal.is-visible { opacity: 1; transform: none; }
@@ -181,7 +181,7 @@
     }
   </style>
 </head>
-<body>
+<body id="top">
   <a class="skip-link" href="#timeline">Skip to timeline</a>
 
   <header class="topbar">
@@ -203,7 +203,7 @@
         <span>SolidWorks</span><span>CATIA</span><span>Onshape</span>
       </div>
       <div class="toolbar">
-        <p class="timeline-label">Project timeline / entries are ordered in the data array</p>
+        <p class="timeline-label">Newest dated work first / undated entries need dates</p>
         <nav class="filters" aria-label="Filter timeline projects">
           <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
           <button class="filter" type="button" data-filter="design" aria-pressed="false">Design</button>
@@ -258,55 +258,180 @@
   </dialog>
 
   <script>
-    const BACK_URL = ""; // Optional portfolio URL. Leave empty to hide the back link.
+    const BACK_URL = "https://lowinertia.com/portfolio/hynarong-eang"; // Set to an empty string to hide the back link.
 
     const ENTRIES = [
       {
+        title: "Sentinel-1A satellite thermal analysis",
+        date: "24 May 2026",
+        categories: ["analysis", "team"],
+        summary: "Combined orbital heat-balance calculations and transient CFD to study a satellite thermal-control model.",
+        description: "I calculated the initial thermal state with a teammate and helped refine the conference paper. Our model reported an electronics-surface temperature of about 331 K after 2,500 s, while the radiator surface was about 7 K below the 273 K starting temperature.",
+        tags: ["ANSYS", "CFD", "Thermal analysis"],
+        images: [
+          { src: "photos/satellite-cad-model.jpg", alt: "CAD model of the satellite thermal-management assembly", caption: "Simplified Sentinel-1A thermal model" },
+          { src: "photos/satellite-thermal-contour-bus.jpg", alt: "ANSYS static-temperature contour across the satellite electronics bus", caption: "Thermal contour across the electronics bus" },
+          { src: "photos/satellite-thermal-contour-component.jpg", alt: "Close view of the simulated hot electronics component and heat spreader", caption: "Close-up of the simulated component temperature" },
+          { src: "photos/satellite-orbit-temperature.png", alt: "Calculated satellite bulk temperature over two orbital cycles", caption: "Calculated temperature change over orbital position" },
+          { src: "photos/satellite-poster.jpg", alt: "One-page project poster summarising the satellite heat-transfer study", caption: "Heat Transfer AT3 poster" }
+        ]
+      },
+      {
         title: "RMIT Rover Team — End-effector design",
-        date: "[add date or semester]",
+        date: "2026–Present",
         categories: ["design", "team"],
-        summary: "Redesigned the end-effector, cutting its weight by 10%, simplifying wiring and improving appearance.",
-        description: "I redesigned the end-effector, reducing its weight by 10%, simplifying the wiring and improving its appearance. [Add the original requirement and how the result was checked.]",
-        tags: ["[add project tools]"],
-        images: []
+        summary: "Redesigned the end-effector, reducing its weight by 10%, simplifying wiring and improving its appearance.",
+        description: "I designed and assembled the payload-handling gripper in Onshape, then refined it through design reviews and iterations. The final redesign cut weight by 10%, simplified wiring and improved appearance; [add the design constraints and how you verified the change].",
+        tags: ["Onshape", "CAD modelling", "Mechanical design", "Prototyping"],
+        images: [
+          { src: "photos/rover-end-effector-cad-final.jpg", alt: "Onshape CAD model of the RMIT Rover Team end-effector gripper", caption: "End-effector CAD design" },
+          { src: "photos/rover-end-effector-overview.jpg", alt: "Overview render of the gripper mechanism and rover payload interface", caption: "Gripper mechanism overview" },
+          { src: "photos/rover-end-effector-cad-detail.jpg", alt: "CAD detail view of the end-effector jaws and linkage", caption: "Gripper detail" },
+          { src: "photos/rover-end-effector-cad-assembly.jpg", alt: "Assembled CAD view of the end-effector mechanism", caption: "Assembled mechanism" },
+          { src: "photos/rover-end-effector-prototype.jpg", alt: "Physical prototype of the rover gripper built from printed and assembled components", caption: "Physical prototype" }
+        ]
       },
       {
         title: "Warman robot",
-        date: "[add date or semester]",
+        date: "2025–2026",
         categories: ["team"],
-        summary: "A five-person university coursework project.",
-        description: "We worked as a five-person team on a university coursework project. I [describe your personal contribution], and we [add a verified coursework result or test outcome].",
-        tags: ["[add project tools]"],
-        images: []
+        summary: "Designed and tested an autonomous robot as a five-person university coursework project.",
+        description: "We developed an autonomous robot for the RMIT Warman coursework project. I [confirm your personal contribution: the resume and portfolio describe different roles]; we completed more than 10 test and troubleshooting cycles. The supplied resume reports a runner-up coursework result, not an external competition win.",
+        tags: ["Team project", "Robot design", "Testing", "[confirm your tools]"],
+        images: [
+          { src: "photos/warman-robot-prototype.jpg", alt: "Photograph of the team's autonomous robot prototype", caption: "Team robot prototype" }
+        ]
       },
       {
-        title: "Pressure vessel design",
-        date: "[add date or semester]",
-        categories: ["design"],
-        summary: "[Add a one-line summary of the pressure vessel design.]",
-        description: "[Add what you did and the main design constraint.] [Add the verified result and any key number.]",
-        tags: ["[add project tools]"],
-        images: []
+        title: "Lunar rover wheel design",
+        date: "19 Oct 2024",
+        categories: ["design", "team"],
+        summary: "Modelled and detailed a wheel for a lunar rover, then contributed to the team assembly model.",
+        description: "I modelled and detailed the rover wheel in SolidWorks, producing preliminary and detailed drawings. The group journal records my contribution to the assembly model and presentation; [add a verified physical test or performance result, if available].",
+        tags: ["SolidWorks", "CAD modelling", "Engineering drawings", "Assembly modelling"],
+        images: [
+          { src: "photos/rover-wheel-assembly-drawing.jpg", alt: "SolidWorks assembly drawing of the lunar rover wheel and drive components", caption: "Wheel assembly drawing" },
+          { src: "photos/rover-wheel-detail.jpg", alt: "Detailed engineering drawing with section views of the designed rover wheel", caption: "Detailed wheel drawing" },
+          { src: "photos/rover-wheel-preliminary-drawing.jpg", alt: "Preliminary dimensioned drawing of the rover wheel", caption: "Preliminary wheel drawing" },
+          { src: "photos/rover-team-cad-wheel-suspension.jpg", alt: "Group CAD rendering showing the rover wheel and suspension", caption: "Team rover CAD: wheels and suspension" },
+          { src: "photos/rover-team-cad-mast-body.jpg", alt: "Group CAD rendering showing the rover mast and body assembly", caption: "Team rover CAD: mast and body" }
+        ]
       },
       {
-        title: "Satellite thermal analysis",
-        date: "[add date or semester]",
+        title: "Pressure-vessel material selection",
+        date: "26 Oct 2025",
+        categories: ["analysis", "team"],
+        summary: "Compared materials for a pressure vessel handling caustic soda at 280 °C and 3.5 MPa.",
+        description: "I was assigned the pressure-vessel section of a group material-selection report. I compared candidate materials and recommended INCONEL alloy 625 (ASME SB-443), which scored 8.00 in the report's weighted comparison; this is a material-selection study, not a completed vessel design.",
+        tags: ["Material selection", "INCONEL 625", "High-temperature service"],
+        images: [
+          { src: "photos/pressure-material-score.png", alt: "Rendered report page showing the weighted pressure-vessel material comparison", caption: "Weighted material comparison from the report" }
+        ]
+      },
+      {
+        title: "Refrigeration and heat-recovery system",
+        date: "13 Oct 2024",
+        categories: ["analysis", "design", "team"],
+        summary: "Analysed an R134a refrigeration cycle linked to process-water heating for a juice-processing line.",
+        description: "We analysed the refrigeration and heat-recovery system as a two-person applied-thermodynamics project. The report estimated a maximum recovered-water temperature of 54.7 °C against a 71.4 °C target and recommended supplementary heating; [confirm which calculations and recommendations were your work].",
+        tags: ["R134a", "Applied thermodynamics", "Heat exchangers"],
+        images: [
+          { src: "photos/refrigeration-heat-recovery-system.jpg", alt: "Hand-drawn process diagram linking the refrigeration cycle to heating, steam and juice processing", caption: "Refrigeration cycle and process heat-recovery concept" },
+          { src: "photos/refrigeration-expansion-valve.jpg", alt: "Expansion valve option included in the team's component selection", caption: "Selected expansion-valve option shown in the report" },
+          { src: "photos/refrigeration-compressor.jpg", alt: "Compressor option included in the team's component selection", caption: "Selected compressor option shown in the report" }
+        ]
+      },
+      {
+        title: "Fluid piping system design",
+        date: "[confirm year: 2024 or 2025]",
+        categories: ["analysis", "design", "team"],
+        summary: "Designed and analysed a three-section cooling-water loop for a Rankine-cycle power plant.",
+        description: "We selected piping, a strainer, a globe valve and a pump for a target flow of 0.23 L/s. The report records a pump head of 9.148 m and 5.21 m available NPSH; [confirm which calculations or component selections you personally completed].",
+        tags: ["Fluid systems", "Pump selection", "Excel", "Hydraulic calculations"],
+        images: [
+          { src: "photos/pipe-system-schematic.png", alt: "Annotated schematic of the cooling-water circuit, condenser, pump, valve and cooling tower", caption: "Three-section cooling-water system layout" },
+          { src: "photos/pipe-pump-curve.png", alt: "Pump and system curves used to select the operating point", caption: "Pump and system operating curves" },
+          { src: "photos/pipe-pump-power-curve.png", alt: "Pump power and NPSH curves from the selected pump data", caption: "Pump power and NPSH curves" }
+        ]
+      },
+      {
+        title: "Traffic-light and pedestrian-crossing system",
+        date: "06 Jun 2024",
+        categories: ["design", "team"],
+        summary: "Modelled a timed traffic sequence and pedestrian-button crossing in Simulink, with a breadboard prototype.",
+        description: "I handled Simulink, testing, discussion and evaluation for both project parts. Our report documents an Arduino UNO breadboard prototype with vehicle and pedestrian signal states, including a button-triggered crossing sequence.",
+        tags: ["MATLAB", "Simulink", "Arduino UNO", "Testing"],
+        images: [
+          { src: "photos/traffic-light-simulink-model.png", alt: "Simulink traffic-light model with vehicle and pedestrian signal outputs", caption: "Simulink model and simulated lamp outputs" },
+          { src: "photos/traffic-light-simulink-thumbnail.png", alt: "Traffic-light Simulink subsystem showing button input and five signal outputs", caption: "Subsystem view from the supplied SLX model" },
+          { src: "photos/traffic-light-breadboard-green.jpg", alt: "Arduino UNO and breadboard with the green vehicle signal illuminated", caption: "Prototype signal state: vehicle green" },
+          { src: "photos/traffic-light-breadboard-yellow.jpg", alt: "Arduino UNO and breadboard with the yellow vehicle signal illuminated", caption: "Prototype signal state: vehicle yellow" },
+          { src: "photos/traffic-light-breadboard-red.jpg", alt: "Arduino UNO and breadboard with the red vehicle signal illuminated", caption: "Prototype signal state: vehicle red and pedestrian green" },
+          { src: "photos/traffic-light-button-prototype.jpg", alt: "Close view of the traffic-light breadboard prototype with a pedestrian push button", caption: "Breadboard prototype with pedestrian button" }
+        ]
+      },
+      {
+        title: "MATLAB unit-conversion program",
+        date: "May 2024",
         categories: ["analysis"],
-        summary: "[Add a one-line summary of the satellite thermal analysis.]",
-        description: "[Add what you analysed and your contribution.] [Add the verified finding, method or key number.]",
-        tags: ["[add project tools]"],
-        images: []
+        summary: "Built and tested a text-menu MATLAB converter covering 14 metric and imperial conversion directions.",
+        description: "I wrote separate conversion and text-interface functions, with input checks and error handling. The report shows a test converting 5,230 kilometres to 3,249.8602 miles and documents expected-versus-actual checks across the listed conversions.",
+        tags: ["MATLAB", "Input validation", "Testing"],
+        images: [
+          { src: "photos/matlab-converter-logic.png", alt: "Flowchart of the MATLAB unit-conversion function and conversion cases", caption: "Conversion-function logic" },
+          { src: "photos/matlab-converter-flow.png", alt: "Flowchart of the text-based unit-converter user interface", caption: "Text-interface flow" },
+          { src: "photos/matlab-converter-example.png", alt: "MATLAB command-window example showing a kilometre-to-mile conversion", caption: "Example command-window output" }
+        ]
       },
       {
-        title: "Refrigeration system design",
-        date: "[add date or semester]",
-        categories: ["design"],
-        summary: "[Add a one-line summary of the refrigeration system design.]",
-        description: "[Add the design problem and your contribution.] [Add the verified result and any key number.]",
-        tags: ["[add project tools]"],
-        images: []
+        title: "Column-buckling laboratory",
+        date: "05 May 2026",
+        categories: ["analysis", "team"],
+        summary: "Tested aluminium columns under compression to compare length and end-condition effects on buckling load.",
+        description: "Our four-person group tested column lengths from 0.32 to 0.52 m with pinned-pinned, pinned-fixed and fixed-fixed supports. Longer effective length reduced critical load while greater end restraint increased it, consistent with Euler theory; [add your specific lab and analysis contribution].",
+        tags: ["Solid mechanics", "Lab testing", "Euler buckling"],
+        images: [
+          { src: "photos/column-buckling-test-rig.jpg", alt: "Laboratory column-buckling test frame and load indicator", caption: "Column-buckling test equipment" },
+          { src: "photos/column-buckling-results.png", alt: "Rendered results page comparing measured buckling loads for three support conditions", caption: "Measured buckling loads by support condition" }
+        ]
+      },
+      {
+        title: "Reliable regional food-supply system",
+        date: "08 Nov 2025",
+        categories: ["design", "team"],
+        summary: "Developed a systems-level concept for more reliable local food production and distribution.",
+        description: "I wrote the eco-efficiency and eco-effectiveness sections, proposing options for energy, water, materials and waste. Our team set a design target of 312 kg of food per person per year; this was a requirement in the report, not a measured outcome.",
+        tags: ["Systems design", "Eco-efficiency", "Eco-effectiveness"],
+        images: [
+          { src: "photos/food-supply-causal-loop.png", alt: "Causal-loop diagram linking regional wealth, food production, availability, consumption and price", caption: "Regional food-system causal-loop diagram" },
+          { src: "photos/food-system-eco-efficiency.png", alt: "Eco-efficiency concept map for energy, water, planting and local production options", caption: "Eco-efficiency options I documented" },
+          { src: "photos/food-system-eco-effectiveness.png", alt: "Eco-effectiveness concept map for reusable and lower-impact system materials", caption: "Eco-effectiveness options I documented" }
+        ]
+      },
+      {
+        title: "EWB — Safe river-access platform",
+        date: "24 May 2024",
+        categories: ["design", "team"],
+        summary: "Proposed a community-informed floating platform to support safer river access in Pu Ngaol, Cambodia.",
+        description: "I wrote the ideation, preliminary-idea and conclusion sections, and reviewed discovery, problem-definition and testing sections. Our team selected a non-adjustable floating platform intended to provide safer, accessible and low-maintenance river access.",
+        tags: ["Concept development", "Requirements", "Prototype design"],
+        images: [
+          { src: "photos/river-access-concept-score.png", alt: "Concept-selection table comparing river-access design options", caption: "Concept-selection matrix" },
+          { src: "photos/river-access-prototype-1.png", alt: "Hand-drawn first river-access platform concept across a 50-metre river span", caption: "Initial concept sketch" },
+          { src: "photos/river-access-prototype-2.png", alt: "Hand-drawn second concept showing a floating access platform and anchor points", caption: "Concept iteration two" },
+          { src: "photos/river-access-prototype-3.png", alt: "Hand-drawn third concept showing the floating platform relative to river level", caption: "Concept iteration three" }
+        ]
       }
     ];
+
+    // Accept full dates and year/semester ranges; entries without a usable year stay at the bottom.
+    function dateOrder(date) {
+      const parsed = Date.parse(date);
+      if (!Number.isNaN(parsed)) return parsed;
+      const year = String(date).match(/\b(?:19|20)\d{2}\b/);
+      return year ? Date.UTC(Number(year[0]), 0, 1) : -Infinity;
+    }
+    ENTRIES.sort((a, b) => dateOrder(b.date) - dateOrder(a.date));
 
     document.documentElement.classList.add("js");
     const backLink = document.getElementById("back-link");

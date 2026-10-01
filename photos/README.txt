@@ -1,0 +1,1 @@
+This folder contains visuals extracted from the supplied project reports and model files. Add future compressed images here, then reference them from the matching entry's images array in ../index.html. Keep each image's alt text accurate.

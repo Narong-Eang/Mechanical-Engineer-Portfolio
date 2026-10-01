@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Satellite thermal analysis placeholder</title><desc id="desc">Technical placeholder graphic. Replace with the satellite thermal model or simulation result.</desc>
+  <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#25302f" stroke-width="1"/></pattern><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#11191c"/><stop offset="1" stop-color="#0b1014"/></linearGradient></defs>
+  <rect width="1200" height="760" fill="url(#bg)"/><rect width="1200" height="760" fill="url(#grid)"/>
+  <g fill="none" stroke="#b8ef72" stroke-width="4" opacity=".82" stroke-linejoin="round"><path d="M504 307l96-55 96 55v148l-96 55-96-55z"/><path d="M504 307l96 55 96-55m-96 55v148m-102-184-102-47v204l102 51m300-208 102-47v204l-102 51"/><path d="M306 276h-55v162h55m588-162h55v162h-55"/><path d="M563 316h74v98h-74z"/><circle cx="600" cy="365" r="17"/></g>
+  <text x="54" y="78" fill="#b8ef72" font-family="monospace" font-size="21" letter-spacing="3">PROJECT VISUAL / 04</text>
+  <text x="54" y="697" fill="#e7ede9" font-family="monospace" font-size="24" letter-spacing="2">ADD THERMAL MODEL, DIAGRAM OR RESULT PLOT</text>
+</svg>

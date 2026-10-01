@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Project gallery image placeholder</title><desc id="desc">Replace this marked placeholder with a CAD render, build photo, test image, drawing or graph.</desc>
+  <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#25302f" stroke-width="1"/></pattern><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#11191c"/><stop offset="1" stop-color="#0b1014"/></linearGradient></defs>
+  <rect width="1200" height="760" fill="url(#bg)"/><rect width="1200" height="760" fill="url(#grid)"/>
+  <g fill="none" stroke="#b8ef72" stroke-width="3" opacity=".7"><path d="M480 260h240v240H480zM520 300h160v160H520z"/><path d="M600 220v320m-160-160h320"/><circle cx="600" cy="380" r="62"/></g>
+  <text x="54" y="78" fill="#b8ef72" font-family="monospace" font-size="21" letter-spacing="3">GALLERY IMAGE / PLACEHOLDER</text>
+  <text x="54" y="697" fill="#e7ede9" font-family="monospace" font-size="24" letter-spacing="2">REPLACE WITH A PROJECT VISUAL</text>
+</svg>

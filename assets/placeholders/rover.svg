@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">End-effector project image placeholder</title><desc id="desc">Technical placeholder graphic. Replace with the RMIT Rover Team end-effector CAD render or build photo.</desc>
+  <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#25302f" stroke-width="1"/></pattern><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#11191c"/><stop offset="1" stop-color="#0b1014"/></linearGradient></defs>
+  <rect width="1200" height="760" fill="url(#bg)"/><rect width="1200" height="760" fill="url(#grid)"/>
+  <g fill="none" stroke="#b8ef72" stroke-width="4" opacity=".82" stroke-linecap="round" stroke-linejoin="round"><path d="M488 500h224l40-55-30-52H478l-30 52z"/><path d="M502 390l-82-93m278 93 82-93M420 297l-28-35m386 35 28-35"/><path d="M510 500v55m180-55v55M478 445h244"/><circle cx="600" cy="445" r="22"/></g>
+  <g fill="#b8ef72"><circle cx="420" cy="297" r="8"/><circle cx="780" cy="297" r="8"/><circle cx="510" cy="555" r="8"/><circle cx="690" cy="555" r="8"/></g>
+  <text x="54" y="78" fill="#b8ef72" font-family="monospace" font-size="21" letter-spacing="3">PROJECT VISUAL / 01</text>
+  <text x="54" y="697" fill="#e7ede9" font-family="monospace" font-size="24" letter-spacing="2">ADD END-EFFECTOR CAD RENDER OR BUILD PHOTO</text>
+</svg>
