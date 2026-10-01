@@ -1,41 +1,36 @@
-# Engineering Timeline
+# Engineering Projects & Experience / Bio
 
-Open `index.html` by double-clicking it. The page has no build step, framework, external font, or required assets. Entries and photos are edited in the `ENTRIES` array in the script near the bottom of the file.
+Static, framework-free site. Open `index.html` or `bio.html` locally. Both pages share their project records from `entries.js`.
 
-## Add projects and photos
+## Files
 
-1. Keep `ENTRIES` ordered newest to oldest.
-2. Copy a project object and edit its `title`, `date`, `categories`, `summary`, `description`, `tags`, and `images` fields. Categories are `design`, `analysis`, and `team` and control the filter chips.
-3. The supplied project images are already in the `photos/` folder beside `index.html`. Add future compressed images there and use relative paths in `images`:
+- `index.html` — black-and-white engineering timeline and project galleries.
+- `bio.html` — bio, work experience, education, expandable skills and resume download.
+- `entries.js` — shared project records. Add a unique `id` when adding an entry; the Bio page's timeline links use it.
+- `photos/` — project images referenced by `entries.js`.
+- `documents/` — PDF reports referenced by project entries: `regional-food-supply-system.pdf` and `pressure-vessel-material-selection.pdf`.
+- `resume/Hynarong-Eang-Resume.pdf` — put the final resume PDF here. The download link already points to this path.
 
-   ```js
-   images: [
-     { src: "photos/rover-assembly.webp", alt: "CAD render of the rover end-effector", caption: "End-effector assembly" },
-     { src: "photos/rover-test.webp", alt: "Rover end-effector during a bench test", caption: "Bench test" }
-   ]
-   ```
+Keep the folder structure intact when deploying. `resume/README.txt` is a reminder file; replace or keep it when you add the PDF.
 
-   Each real image needs accurate `alt` text. The gallery lazy-loads photos and works with long image lists. Leave `images: []` for a clean placeholder tile.
-4. Replace bracketed copy with facts you can support. Project-specific tool tags should name tools actually used on that project.
-5. Add your portfolio URL to `BACK_URL` near the start of the script. The back link stays hidden when the value is empty.
+## Edit project entries
 
-The dated entries are ordered newest first using dates shown in, or attached to, the supplied reports. Full dates and year ranges such as `2025–2026` are supported. Replace them with semester labels if that is more accurate for your coursework. Entries without a usable year stay after dated entries until you add one.
+Add or edit one object in the `window.ENTRIES` array in `entries.js`. It has `id`, `title`, `date`, `categories`, `summary`, `description`, `tags`, and `images` fields. Each image needs accurate `alt` text; put compressed images in `photos/` and use a relative path such as `photos/assembly.jpg`. Leave `images: []` for a placeholder tile; a missing image file also falls back to a placeholder. Add `documents: [{ label: "View report (PDF)", href: "documents/report.pdf" }]` for report links. Set `openDocumentDirectly: true` to make a single-document card open its PDF directly. Full dates and year ranges sort newest first.
+
+The Bio page keeps `EXPERIENCE`, `EDUCATION`, and `CERTIFICATES` arrays in its script. Set `SHOW_GRADES` to `false` to hide program GPAs, WAM, and course grades.
 
 ## Deploy free
 
-Choose one host. The HTML has no build step; include the `photos/` folder if you have added images.
+Upload the complete folder contents so both HTML pages, `entries.js`, `photos/`, `documents/`, and `resume/` are at the site root.
 
-- **Netlify Drop:** sign in at [Netlify Drop](https://app.netlify.com/drop), then drag the site folder into the drop area. It publishes a `netlify.app` URL. Netlify currently lists a $0 Free plan with a monthly usage limit; sites pause if the hard limit is reached. [Drop instructions](https://docs.netlify.com/start/quickstarts/netlify-drop-quickstart/) · [Free plan details](https://www.netlify.com/pricing/)
-- **GitHub Pages:** put `index.html` and `photos/` in a public repository. In **Settings → Pages**, choose **Deploy from a branch**, `main`, and `/(root)`. The URL will look like `https://USERNAME.github.io/REPOSITORY/`. [GitHub Pages guide](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
-- **Vercel:** import the repository or deploy the folder as a static site. The Hobby plan is free for personal, non-commercial use. [Vercel Hobby plan](https://vercel.com/docs/plans/hobby)
+- **GitHub Pages:** Upload the site contents to a repository. In **Settings → Pages**, select **Deploy from a branch**, choose `main` and `/(root)`, then save. The home page is the projects timeline; `bio.html` is the Bio page.
+- **Netlify Drop:** Drag the full site folder into Netlify Drop, keeping its folders intact.
+- **Vercel:** Deploy the folder as a static site with no build command and the site folder as the output directory.
 
-## Make a QR code
+## QR code
 
-After deployment, open the final HTTPS URL and copy it exactly. Generate a **static** QR code that encodes that URL directly. A free local option is the open-source Python `qrcode` package:
+After deployment, copy the final HTTPS URL. For a resume QR, encode `https://YOUR-SITE-URL/bio.html`; for the projects timeline, encode the home page URL. Use a static QR that points directly to your URL, print dark on a light background with a quiet margin, and test a paper proof at its final size.
 
-```sh
-python -m pip install "qrcode[pil]"
-python -c "import qrcode; qrcode.make('https://YOUR-SITE-URL/').save('engineering-timeline-qr.png')"
-```
+## Before publishing
 
-The QR contains the page URL itself; it does not use a tracking redirect or expire. Print dark on white, keep the quiet margin, and scan a paper proof at its final size before printing more.
+Add `resume/Hynarong-Eang-Resume.pdf`, the two reports (`documents/regional-food-supply-system.pdf` and `documents/pressure-vessel-material-selection.pdf`), and the two remaining conference photos (`photos/deakin-defence-conference-2.jpg` and `photos/deakin-defence-conference-3.jpg`). The Practera certificate PDF is already in `documents/`. Replace the bracketed placeholders; confirm the expanded course titles and 3D-printing skill; and check both pages, project links, images, and the resume download on a phone.
