@@ -1,206 +1,475 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-AU">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Mechanical engineering portfolio of Hynarong Eang, RMIT University student in Melbourne.">
-  <title>Hynarong Eang | Mechanical Engineering Portfolio</title>
+  <meta name="theme-color" content="#0A0C10">
+  <meta name="description" content="Hynarong Eang's mechanical engineering project timeline at RMIT University.">
+  <title>Hynarong Eang — Engineering Timeline</title>
   <style>
     :root {
-      color-scheme: light dark;
-      --bg: #f4f6f5;
-      --surface: #ffffff;
-      --text: #182522;
-      --muted: #52625e;
-      --line: #d8e0dc;
-      --accent: #12634f;
-      --accent-soft: #e2f1eb;
-      --max: 980px;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #101715;
-        --surface: #18211e;
-        --text: #edf4f0;
-        --muted: #b3c2bb;
-        --line: #35423d;
-        --accent: #8ad4b5;
-        --accent-soft: #20352d;
-      }
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
+      color-scheme: dark;
+      --bg: #0a0c10;
+      --panel: #10141c;
+      --panel-2: #141a24;
+      --line: #293244;
+      --line-bright: #3b4963;
+      --text: #eef1f8;
+      --muted: #a1aabd;
+      --quiet: #73809a;
+      --accent: #849aff;
+      --accent-soft: rgb(132 154 255 / 12%);
+      --accent-ink: #0a0c10;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --max: 1120px;
+      font: 16px/1.6 var(--sans);
       color: var(--text);
-      font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--bg);
+      scroll-behavior: smooth;
     }
-    a { color: var(--accent); }
-    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
-    .wrap { width: min(var(--max), calc(100% - 36px)); margin-inline: auto; }
-    .skip {
-      position: absolute; left: -9999px; top: 8px;
-      background: var(--surface); padding: 10px;
+    *, *::before, *::after { box-sizing: border-box; }
+    body { min-width: 320px; margin: 0; background: var(--bg); color: var(--text); }
+    button, a { font: inherit; }
+    button { color: inherit; }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    [hidden] { display: none !important; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    ::selection { background: var(--accent); color: var(--accent-ink); }
+
+    .skip-link { position: fixed; z-index: 100; top: .75rem; left: .75rem; padding: .65rem .9rem; border-radius: 8px; background: var(--accent); color: var(--accent-ink); transform: translateY(-160%); }
+    .skip-link:focus { transform: translateY(0); }
+    .topbar { position: sticky; z-index: 20; top: 0; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem; min-height: 72px; padding: .7rem max(1rem, calc((100vw - var(--max)) / 2)); border-bottom: 1px solid var(--line); background: rgb(10 12 16 / 94%); backdrop-filter: blur(14px); }
+    .back-link { justify-self: start; color: var(--muted); text-decoration: none; white-space: nowrap; font-size: .85rem; }
+    .back-link:hover { color: var(--accent); }
+    .profile { display: grid; gap: .12rem; text-align: center; }
+    .profile__name { font-size: .82rem; font-weight: 760; letter-spacing: .09em; }
+    .profile__role { color: var(--muted); font-size: .7rem; }
+    .topbar__mark { justify-self: end; color: var(--quiet); font: .67rem var(--mono); letter-spacing: .08em; }
+
+    main { width: min(var(--max), calc(100% - 2rem)); margin-inline: auto; }
+    .intro { padding: clamp(3.3rem, 8vw, 6.5rem) 0 2rem; }
+    .eyebrow, .timeline-date, .tag, .filter, .timeline-label, .photo-placeholder__label, .gallery-count { font-family: var(--mono); text-transform: uppercase; letter-spacing: .075em; }
+    .eyebrow { margin: 0; color: var(--accent); font-size: .71rem; }
+    h1 { max-width: 760px; margin: .8rem 0 .85rem; font-size: clamp(2.8rem, 9vw, 5.6rem); font-weight: 740; line-height: .98; letter-spacing: -.065em; }
+    h1 span { color: var(--accent); }
+    .intro__copy { max-width: 690px; margin: 1rem 0 0; color: var(--muted); font-size: clamp(1rem, 2.4vw, 1.18rem); line-height: 1.7; }
+    .intro__skills { display: flex; flex-wrap: wrap; gap: .5rem .9rem; margin-top: 1.5rem; color: var(--quiet); font: .68rem var(--mono); letter-spacing: .045em; text-transform: uppercase; }
+    .intro__skills span + span::before { content: "/"; padding-right: .9rem; color: var(--accent); }
+    .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.15rem 0; margin-top: 2.5rem; border-top: 1px solid var(--line); }
+    .timeline-label { margin: 0; color: var(--quiet); font-size: .67rem; }
+    .filters { display: flex; flex-wrap: wrap; gap: .45rem; }
+    .filter { min-height: 42px; padding: .6rem .85rem; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--muted); cursor: pointer; font-size: .64rem; transition: border-color .18s ease, background .18s ease, color .18s ease; }
+    .filter:hover { border-color: var(--line-bright); color: var(--text); }
+    .filter[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+
+    .timeline { position: relative; display: grid; gap: 2.2rem; padding: 1rem 0 4.8rem; margin: 0; list-style: none; }
+    .timeline::before { position: absolute; top: 0; bottom: 4.8rem; left: 50%; width: 17px; background: repeating-linear-gradient(to bottom, transparent 0 17px, rgb(132 154 255 / 55%) 17px 18px, transparent 18px 36px); content: ""; transform: translateX(-50%); }
+    .timeline::after { position: absolute; top: 0; bottom: 4.8rem; left: 50%; width: 1px; background: linear-gradient(to bottom, var(--accent), var(--line) 16%, var(--line) 88%, transparent); content: ""; transform: translateX(-50%); }
+    .timeline-item { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 76px minmax(0, 1fr); align-items: start; }
+    .timeline-node { z-index: 1; grid-column: 2; grid-row: 1; display: grid; justify-items: center; gap: .45rem; padding-top: 1.35rem; }
+    .timeline-node__dot { width: 13px; height: 13px; border: 3px solid var(--bg); border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 0 18px rgb(132 154 255 / 28%); }
+    .timeline-node__index { color: var(--quiet); font: .61rem var(--mono); }
+    .entry-card { grid-column: 1; grid-row: 1; overflow: hidden; border: 1px solid var(--line); border-radius: 15px; background: var(--panel); transition: border-color .2s ease, transform .2s ease, background .2s ease; }
+    .timeline-item:nth-child(even) .entry-card { grid-column: 3; }
+    .entry-card:hover { transform: translateY(-3px); border-color: var(--line-bright); background: #111722; }
+    .entry-link { display: block; color: inherit; text-decoration: none; }
+    .cover, .photo-placeholder { position: relative; display: grid; place-items: center; overflow: hidden; min-height: 190px; aspect-ratio: 1.85; padding: 1rem; background-color: #0d1118; background-image: linear-gradient(rgb(132 154 255 / 4%) 1px, transparent 1px), linear-gradient(90deg, rgb(132 154 255 / 4%) 1px, transparent 1px); background-size: 28px 28px; }
+    .cover::before, .photo-placeholder::before { position: absolute; width: min(30%, 170px); aspect-ratio: 1; border: 1px solid rgb(132 154 255 / 42%); border-radius: 50%; content: ""; box-shadow: 0 0 0 18px rgb(132 154 255 / 4%), 0 0 0 40px rgb(132 154 255 / 3%); }
+    .cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .photo-placeholder__text { position: relative; display: grid; justify-items: center; gap: .55rem; color: var(--muted); text-align: center; }
+    .photo-placeholder__symbol { color: var(--accent); font: 1.8rem var(--mono); }
+    .photo-placeholder__label { max-width: 24rem; font-size: .65rem; line-height: 1.7; }
+    .photo-placeholder__project { color: var(--quiet); font-size: .72rem; }
+    .entry-copy { display: grid; gap: .8rem; padding: 1.1rem 1.15rem 1.25rem; }
+    .entry-copy__meta { display: flex; align-items: center; justify-content: space-between; gap: .6rem; }
+    .timeline-date { color: var(--accent); font-size: .63rem; }
+    .category-label { color: var(--quiet); font: .61rem var(--mono); text-align: right; text-transform: uppercase; }
+    .entry-copy h2 { margin: 0; font-size: clamp(1.24rem, 2.8vw, 1.72rem); line-height: 1.18; letter-spacing: -.035em; }
+    .entry-copy__summary { margin: 0; color: var(--muted); font-size: .91rem; line-height: 1.65; }
+    .entry-copy__description { margin: 0; color: #d0d5df; font-size: .84rem; line-height: 1.7; }
+    .tags { display: flex; flex-wrap: wrap; gap: .42rem; padding: 0; margin: 0; list-style: none; }
+    .tag { padding: .34rem .48rem; border: 1px solid var(--line); border-radius: 5px; color: var(--muted); font-size: .58rem; letter-spacing: .035em; }
+    .card-cta { display: inline-flex; align-items: center; gap: .55rem; color: var(--accent); font: .67rem var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+    .card-cta::after { content: "↗"; font-size: .95rem; transition: transform .18s ease; }
+    .entry-link:hover .card-cta::after { transform: translate(2px, -2px); }
+    .empty-state { display: none; padding: 1.5rem; border: 1px dashed var(--line); border-radius: 12px; color: var(--muted); text-align: center; }
+    .empty-state.is-visible { display: block; }
+    .footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1.2rem 0 2rem; border-top: 1px solid var(--line); color: var(--quiet); font: .62rem var(--mono); letter-spacing: .05em; }
+    .footer a { color: var(--muted); text-decoration: none; }
+    .footer a:hover { color: var(--accent); }
+
+    dialog { color: var(--text); }
+    .detail-dialog, .lightbox { padding: 0; border: 1px solid var(--line-bright); background: var(--panel); box-shadow: 0 24px 100px rgb(0 0 0 / 65%); }
+    .detail-dialog { width: min(1080px, calc(100vw - 2rem)); max-width: none; max-height: 92dvh; border-radius: 16px; }
+    .detail-dialog::backdrop, .lightbox::backdrop { background: rgb(3 5 9 / 84%); backdrop-filter: blur(7px); }
+    .detail-shell { display: grid; grid-template-rows: auto minmax(0, 1fr); max-height: inherit; }
+    .detail-top { position: sticky; top: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: .7rem; min-height: 59px; padding: .65rem .9rem; border-bottom: 1px solid var(--line); background: rgb(16 20 28 / 96%); }
+    .detail-top__date { color: var(--accent); font: .65rem var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+    .close-button { min-width: 44px; min-height: 44px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-2); cursor: pointer; }
+    .close-button:hover { border-color: var(--accent); color: var(--accent); }
+    .detail-scroll { overflow: auto; overscroll-behavior: contain; }
+    .detail-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr); gap: clamp(1.2rem, 3vw, 2.7rem); padding: clamp(.9rem, 3vw, 2rem); }
+    .gallery { min-width: 0; }
+    .gallery-stage { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 11px; background: #0b0e14; }
+    .gallery-main { display: grid; place-items: center; width: 100%; min-height: 250px; aspect-ratio: 1.35; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
+    .gallery-main img { width: 100%; height: 100%; max-height: 560px; object-fit: contain; }
+    .gallery-stage .photo-placeholder { width: 100%; min-height: 250px; aspect-ratio: 1.35; }
+    .gallery-arrow { position: absolute; z-index: 1; top: 50%; display: grid; place-items: center; width: 43px; height: 47px; border: 1px solid var(--line-bright); border-radius: 8px; background: rgb(10 12 16 / 88%); cursor: pointer; transform: translateY(-50%); }
+    .gallery-arrow:hover { border-color: var(--accent); color: var(--accent); }
+    .gallery-arrow--prev { left: .65rem; }
+    .gallery-arrow--next { right: .65rem; }
+    .gallery-count { position: absolute; right: .65rem; bottom: .65rem; padding: .3rem .42rem; border-radius: 4px; background: rgb(10 12 16 / 90%); color: var(--text); font-size: .59rem; }
+    .gallery-caption { min-height: 1.7rem; margin: .55rem .1rem; color: var(--muted); font: .63rem var(--mono); }
+    .thumbnails { display: flex; gap: .5rem; overflow-x: auto; padding: .15rem .1rem .55rem; scrollbar-color: var(--line-bright) transparent; scrollbar-width: thin; }
+    .thumbnail { flex: 0 0 88px; overflow: hidden; padding: 0; border: 1px solid var(--line); border-radius: 6px; background: #0b0e14; cursor: pointer; }
+    .thumbnail img { width: 100%; height: 60px; object-fit: cover; }
+    .thumbnail[aria-current="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+    .thumbnail-placeholder { display: grid; place-items: center; min-height: 54px; padding: .45rem; color: var(--quiet); font: .55rem var(--mono); text-align: center; text-transform: uppercase; }
+    .detail-copy { min-width: 0; align-self: start; }
+    .detail-copy h2 { margin: .35rem 0 .85rem; font-size: clamp(1.75rem, 4vw, 2.6rem); line-height: 1.05; letter-spacing: -.05em; }
+    .detail-copy__summary { color: var(--muted); line-height: 1.7; }
+    .detail-copy__description { margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid var(--line); color: #d0d5df; line-height: 1.78; white-space: pre-line; }
+    .detail-copy .tags { margin-top: 1.2rem; }
+
+    .lightbox { width: min(96vw, 1500px); max-width: none; max-height: 96dvh; border-radius: 12px; background: #05070b; }
+    .lightbox__frame { position: relative; display: grid; place-items: center; min-height: min(90dvh, 900px); padding: 3.5rem 1rem 3rem; }
+    .lightbox__frame img { max-width: 100%; max-height: calc(90dvh - 6.5rem); object-fit: contain; }
+    .lightbox .close-button { position: absolute; z-index: 2; top: .7rem; right: .7rem; }
+    .lightbox__caption { position: absolute; right: 4.5rem; bottom: .7rem; left: 1rem; color: var(--muted); font: .64rem var(--mono); text-align: center; }
+
+    html.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
+    html.js .reveal.is-visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      html.js .reveal { opacity: 1; transform: none; }
     }
-    .skip:focus { left: 8px; z-index: 5; }
-    header { padding: 30px 0 36px; }
-    nav {
-      display: flex; justify-content: space-between; align-items: center;
-      gap: 16px; margin-bottom: 38px;
+    @media (max-width: 760px) {
+      .topbar { grid-template-columns: auto minmax(0, 1fr) auto; min-height: 64px; gap: .6rem; padding-inline: .9rem; }
+      .profile { text-align: left; }
+      .profile__name { font-size: .73rem; }
+      .profile__role { font-size: .61rem; }
+      .topbar__mark { font-size: .58rem; }
+      .back-link { max-width: 26px; overflow: hidden; font-size: 0; }
+      .back-link::before { content: "←"; font: 1.2rem var(--sans); }
+      .toolbar { align-items: flex-start; flex-direction: column; }
+      .timeline { gap: 1.4rem; }
+      .timeline::before, .timeline::after { left: 13px; transform: none; }
+      .timeline::before { width: 14px; }
+      .timeline-item { grid-template-columns: 28px minmax(0, 1fr); gap: .45rem; }
+      .timeline-node { grid-column: 1; justify-items: center; padding-top: 1.2rem; }
+      .timeline-node__index { font-size: .56rem; writing-mode: vertical-rl; }
+      .entry-card, .timeline-item:nth-child(even) .entry-card { grid-column: 2; }
+      .detail-dialog { width: 100%; height: 100%; max-height: 100dvh; margin: 0; border: 0; border-radius: 0; }
+      .detail-shell { height: 100%; max-height: 100dvh; }
+      .detail-grid { grid-template-columns: minmax(0, 1fr); gap: 1.1rem; padding: .8rem; }
+      .gallery-main, .gallery-stage .photo-placeholder { min-height: 230px; aspect-ratio: 1.35; }
+      .detail-copy h2 { font-size: 1.9rem; }
+      .lightbox { width: 100%; height: 100%; max-height: 100dvh; margin: 0; border: 0; border-radius: 0; }
+      .lightbox__frame { min-height: 100dvh; padding-inline: .45rem; }
+      .lightbox__frame img { max-height: calc(100dvh - 7rem); }
     }
-    nav a { text-decoration: none; font-weight: 650; }
-    .nav-links { display: flex; gap: 18px; }
-    .eyebrow {
-      color: var(--accent); font-size: .88rem; font-weight: 750;
-      letter-spacing: .06em; text-transform: uppercase;
-    }
-    h1 { margin: 8px 0; font-size: clamp(2.5rem, 9vw, 4.6rem); line-height: 1.02; }
-    h2 { font-size: clamp(1.6rem, 5vw, 2.2rem); line-height: 1.15; }
-    h3 { line-height: 1.25; }
-    .lead { max-width: 680px; font-size: clamp(1.1rem, 3vw, 1.35rem); }
-    .muted { color: var(--muted); }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 22px 0; }
-    .button {
-      display: inline-block; padding: 12px 17px; min-height: 48px;
-      border: 2px solid var(--accent); border-radius: 8px;
-      background: var(--accent); color: #fff; font-weight: 750;
-      text-decoration: none;
-    }
-    .button.secondary { background: transparent; color: var(--accent); }
-    .featured {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 12px; margin-top: 28px;
-    }
-    .featured a, .card, .case {
-      border: 1px solid var(--line); border-radius: 12px;
-      background: var(--surface);
-    }
-    .featured a {
-      display: block; padding: 15px; color: var(--text);
-      font-weight: 700; text-decoration: none;
-    }
-    main section { padding: 34px 0; }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    .card { padding: 18px; }
-    .card h3 { margin-top: 0; }
-    .case { padding: clamp(18px, 4vw, 30px); margin: 18px 0; scroll-margin-top: 20px; }
-    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; }
-    .facts p { margin: 6px 0; }
-    .visual {
-      margin: 18px 0 0; padding: 18px; border-radius: 8px;
-      background: var(--accent-soft); color: var(--text);
-    }
-    .visual strong { display: block; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; }
-    .tags li { padding: 5px 10px; border-radius: 99px; background: var(--accent-soft); }
-    footer { border-top: 1px solid var(--line); padding: 28px 0 42px; }
-    @media (max-width: 700px) {
-      .featured, .grid, .facts { grid-template-columns: 1fr; }
-      .nav-links { gap: 12px; }
-      header { padding-top: 18px; }
+    @media (max-width: 440px) {
+      main { width: calc(100% - 1.1rem); }
+      .entry-copy { padding-inline: .95rem; }
+      .entry-copy__meta { align-items: flex-start; flex-direction: column; gap: .25rem; }
+      .category-label { text-align: left; }
+      .cover { min-height: 165px; aspect-ratio: 1.55; }
+      .filters { gap: .35rem; }
+      .filter { min-height: 39px; padding-inline: .65rem; font-size: .59rem; }
     }
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip-link" href="#timeline">Skip to timeline</a>
 
-  <header class="wrap" id="top">
-    <nav aria-label="Main navigation">
-      <a href="#top">Hynarong Eang</a>
-      <div class="nav-links">
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-
-    <p class="eyebrow">Mechanical Engineering · RMIT University · Melbourne</p>
-    <h1>Hynarong Eang</h1>
-    <p class="lead"><strong>Mechanical engineering student seeking internship and graduate roles in design engineering and manufacturing.</strong></p>
-    <p class="muted">I’m a third-year Mechanical Engineering (Honours) student at RMIT. My project work includes CAD design, prototyping, engineering analysis, and testing.</p>
-
-    <div class="actions">
-      <a class="button" href="resume.pdf">Download resume PDF</a>
-      <a class="button secondary" href="https://www.linkedin.com/in/hynarong-eang">LinkedIn</a>
+  <header class="topbar">
+    <a class="back-link" id="back-link" href="#" hidden>← Back to Portfolio</a>
+    <div class="profile" aria-label="Hynarong Eang, third-year Mechanical Engineering student at RMIT University">
+      <span class="profile__name">HYNARONG EANG</span>
+      <span class="profile__role">Third-year Mechanical Engineering student · RMIT</span>
     </div>
-
-    <p><strong>Featured projects</strong></p>
-    <div class="featured">
-      <a href="#rover">RMIT Rover Team<br><span class="muted">End-effector prototypes</span></a>
-      <a href="#warman">Warman Competition<br><span class="muted">Autonomous robot</span></a>
-      <a href="#vessel">Pressure vessel<br><span class="muted">AS 1210 coursework design</span></a>
-    </div>
+    <span class="topbar__mark" aria-hidden="true">MEL / AU</span>
   </header>
 
-  <main class="wrap" id="main">
-    <section id="projects">
-      <h2>Selected engineering projects</h2>
-      <p class="muted">Each case study summarizes the problem, my role, design process, and documented result.</p>
-
-      <article class="case" id="rover">
-        <p class="eyebrow">Mechanical design · RMIT Rover Team</p>
-        <h2>Rover end-effector prototypes</h2>
-        <div class="facts">
-          <p><strong>Problem</strong><br>Develop an end-effector to support the rover team’s payload-handling tasks.</p>
-          <p><strong>My role</strong><br>Payload Team Member; developed and evaluated three end-effector prototypes.</p>
-          <p><strong>Constraints</strong><br>Project requirements, functionality, manufacturability, and assembly.</p>
-          <p><strong>Process</strong><br>Used five 3D-printed components and completed three design iterations through peer review and engineering evaluation.</p>
-          <p><strong>Result</strong><br>Compared concepts and refined the design against project requirements. Add a measured test result if available.</p>
-          <p><strong>Tools</strong><br>Onshape, 3D printing, mechanical assembly, and testing.</p>
-        </div>
-        <div class="visual"><strong>Project visual to add</strong>Use a CAD render of the end-effector and a photo of the printed prototype or test setup.</div>
-      </article>
-
-      <article class="case" id="warman">
-        <p class="eyebrow">Competition · Autonomous robot</p>
-        <h2>Warman Competition robot</h2>
-        <div class="facts">
-          <p><strong>Problem</strong><br>Design and build an autonomous robot that meets competition requirements.</p>
-          <p><strong>My role</strong><br>Collaborated in a six-person team integrating mechanical and electrical components.</p>
-          <p><strong>Constraints</strong><br>Competition requirements and reliable system integration.</p>
-          <p><strong>Process</strong><br>Completed more than ten testing and troubleshooting cycles to identify and address system issues.</p>
-          <p><strong>Result</strong><br>Runner-up in the Warman Competition.</p>
-          <p><strong>Tools</strong><br>Add the specific CAD, fabrication, and control tools you used on this project.</p>
-        </div>
-        <div class="visual"><strong>Project visual to add</strong>Use a clear photo of the robot, plus a labelled mechanism or subsystem view showing your contribution.</div>
-      </article>
-
-      <article class="case" id="vessel">
-        <p class="eyebrow">Mechanical design · Coursework</p>
-        <h2>Compressed-air pressure vessel</h2>
-        <div class="facts">
-          <p><strong>Problem</strong><br>Design a vertical Class 2A compressed-air vessel with an 8 m³ internal volume and 862 kPa gauge design pressure.</p>
-          <p><strong>My role</strong><br>Designed the vessel for Mechanical Design 2 coursework.</p>
-          <p><strong>Constraints</strong><br>Applied AS 1210 requirements and selected material and components for the design.</p>
-          <p><strong>Process</strong><br>Calculated shell and head thickness, reinforcement, weld efficiency, corrosion allowance, and hydrostatic test pressure; prepared drawings to AS 1100.</p>
-          <p><strong>Result</strong><br>Completed documented design calculations and technical drawings for the vessel.</p>
-          <p><strong>Tools</strong><br>SolidWorks, Excel, AS 1210, and AS 1100.</p>
-        </div>
-        <div class="visual"><strong>Project visual to add</strong>Use a vessel CAD render and a readable crop of the drawing or calculation summary.</div>
-      </article>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">RMIT University / Melbourne, Australia</p>
+      <h1 id="page-title">Engineering<br><span>Timeline</span></h1>
+      <p class="intro__copy">A record of engineering work across CAD modelling, mechanical design and prototyping. Each project opens into a visual case study.</p>
+      <div class="intro__skills" aria-label="Skills and tools">
+        <span>CAD modelling</span><span>Mechanical design</span><span>Prototyping</span>
+        <span>SolidWorks</span><span>CATIA</span><span>Onshape</span>
+      </div>
+      <div class="toolbar">
+        <p class="timeline-label">Project timeline / entries are ordered in the data array</p>
+        <nav class="filters" aria-label="Filter timeline projects">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" type="button" data-filter="design" aria-pressed="false">Design</button>
+          <button class="filter" type="button" data-filter="analysis" aria-pressed="false">Analysis</button>
+          <button class="filter" type="button" data-filter="team" aria-pressed="false">Team projects</button>
+        </nav>
+      </div>
     </section>
 
-    <section>
-      <h2>Tools and skills</h2>
-      <ul class="tags">
-        <li>SolidWorks</li><li>Onshape</li><li>CATIA V5</li><li>ANSYS</li>
-        <li>MATLAB / Simulink</li><li>3D printing</li><li>Machining</li>
-        <li>Mechanical assembly</li><li>Technical drawings</li>
-      </ul>
+    <section id="timeline" aria-label="Engineering project timeline">
+      <ol class="timeline" id="timeline-list"></ol>
+      <p class="empty-state" id="empty-state" role="status">No entries match this filter.</p>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>For internship and graduate opportunities in mechanical design and manufacturing:</p>
-      <p><a href="mailto:narongeang123@gmail.com">narongeang123@gmail.com</a> ·
-        <a href="https://www.linkedin.com/in/hynarong-eang">LinkedIn</a></p>
-    </section>
+    <footer class="footer">
+      <span>HYNARONG EANG / ENGINEERING TIMELINE</span>
+      <a href="#top">BACK TO TOP ↑</a>
+    </footer>
   </main>
 
-  <footer class="wrap">
-    <p class="muted">Hynarong Eang · Mechanical Engineering · Melbourne, Australia</p>
-  </footer>
+  <dialog class="detail-dialog" id="detail-dialog" aria-labelledby="detail-title">
+    <div class="detail-shell">
+      <div class="detail-top">
+        <span class="detail-top__date" id="detail-date"></span>
+        <button class="close-button" id="detail-close" type="button" aria-label="Close project details">Close ×</button>
+      </div>
+      <div class="detail-scroll">
+        <div class="detail-grid">
+          <section class="gallery" aria-label="Project photo gallery">
+            <div class="gallery-stage" id="gallery-stage"></div>
+            <p class="gallery-caption" id="gallery-caption" aria-live="polite"></p>
+            <div class="thumbnails" id="thumbnails" role="group" aria-label="Project image thumbnails"></div>
+          </section>
+          <article class="detail-copy">
+            <p class="eyebrow" id="detail-category"></p>
+            <h2 id="detail-title"></h2>
+            <p class="detail-copy__summary" id="detail-summary"></p>
+            <div class="detail-copy__description" id="detail-description"></div>
+            <ul class="tags" id="detail-tags" aria-label="Tools and project tags"></ul>
+          </article>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Expanded project photo">
+    <div class="lightbox__frame">
+      <button class="close-button" id="lightbox-close" type="button" aria-label="Close expanded photo">Close ×</button>
+      <img id="lightbox-image" src="" alt="">
+      <p class="lightbox__caption" id="lightbox-caption"></p>
+    </div>
+  </dialog>
+
+  <script>
+    const BACK_URL = ""; // Optional portfolio URL. Leave empty to hide the back link.
+
+    const ENTRIES = [
+      {
+        title: "RMIT Rover Team — End-effector design",
+        date: "[add date or semester]",
+        categories: ["design", "team"],
+        summary: "Redesigned the end-effector, cutting its weight by 10%, simplifying wiring and improving appearance.",
+        description: "I redesigned the end-effector, reducing its weight by 10%, simplifying the wiring and improving its appearance. [Add the original requirement and how the result was checked.]",
+        tags: ["[add project tools]"],
+        images: []
+      },
+      {
+        title: "Warman robot",
+        date: "[add date or semester]",
+        categories: ["team"],
+        summary: "A five-person university coursework project.",
+        description: "We worked as a five-person team on a university coursework project. I [describe your personal contribution], and we [add a verified coursework result or test outcome].",
+        tags: ["[add project tools]"],
+        images: []
+      },
+      {
+        title: "Pressure vessel design",
+        date: "[add date or semester]",
+        categories: ["design"],
+        summary: "[Add a one-line summary of the pressure vessel design.]",
+        description: "[Add what you did and the main design constraint.] [Add the verified result and any key number.]",
+        tags: ["[add project tools]"],
+        images: []
+      },
+      {
+        title: "Satellite thermal analysis",
+        date: "[add date or semester]",
+        categories: ["analysis"],
+        summary: "[Add a one-line summary of the satellite thermal analysis.]",
+        description: "[Add what you analysed and your contribution.] [Add the verified finding, method or key number.]",
+        tags: ["[add project tools]"],
+        images: []
+      },
+      {
+        title: "Refrigeration system design",
+        date: "[add date or semester]",
+        categories: ["design"],
+        summary: "[Add a one-line summary of the refrigeration system design.]",
+        description: "[Add the design problem and your contribution.] [Add the verified result and any key number.]",
+        tags: ["[add project tools]"],
+        images: []
+      }
+    ];
+
+    document.documentElement.classList.add("js");
+    const backLink = document.getElementById("back-link");
+    if (BACK_URL.trim()) {
+      backLink.href = BACK_URL;
+      backLink.hidden = false;
+    }
+
+    const timelineList = document.getElementById("timeline-list");
+    const emptyState = document.getElementById("empty-state");
+    const detailDialog = document.getElementById("detail-dialog");
+    const lightbox = document.getElementById("lightbox");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let activeEntry = null;
+    let activeImage = 0;
+
+    const escapeHTML = (value) => String(value).replace(/[&<>"']/g, (character) => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;"
+    })[character]);
+
+    const categoryNames = { design: "Design", analysis: "Analysis", team: "Team project" };
+
+    function placeholderMarkup(title, compact = false) {
+      const label = compact ? "Add project photos to the images array" : "Project photo to add";
+      return `<div class="photo-placeholder${compact ? " photo-placeholder--compact" : ""}" role="img" aria-label="Photo placeholder for ${escapeHTML(title)}">
+        <div class="photo-placeholder__text"><span class="photo-placeholder__symbol" aria-hidden="true">＋</span><span class="photo-placeholder__label">${label}</span><span class="photo-placeholder__project">${escapeHTML(title)}</span></div>
+      </div>`;
+    }
+
+    function imageMarkup(image, entry, index, className = "") {
+      return `<img class="${className}" src="${escapeHTML(image.src)}" alt="${escapeHTML(image.alt)}" loading="lazy" decoding="async" width="1400" height="900" data-image-index="${index}">`;
+    }
+
+    function renderEntries(filter = "all") {
+      const visible = ENTRIES.map((entry, index) => ({ entry, index }))
+        .filter(({ entry }) => filter === "all" || entry.categories.includes(filter));
+      timelineList.innerHTML = visible.map(({ entry, index }) => {
+        const categories = entry.categories.map((category) => categoryNames[category] || category).join(" · ");
+        const tags = entry.tags.map((tag) => `<li class="tag">${escapeHTML(tag)}</li>`).join("");
+        const cover = entry.images.length ? imageMarkup(entry.images[0], entry, 0) : placeholderMarkup(entry.title);
+        return `<li class="timeline-item reveal">
+          <span class="timeline-node" aria-hidden="true"><span class="timeline-node__dot"></span><span class="timeline-node__index">${String(index + 1).padStart(2, "0")}</span></span>
+          <article class="entry-card">
+            <a class="entry-link" href="#project-details" data-open-entry="${index}" aria-label="Open ${escapeHTML(entry.title)} details">
+              <div class="cover">${cover}</div>
+              <div class="entry-copy">
+                <div class="entry-copy__meta"><time class="timeline-date">${escapeHTML(entry.date)}</time><span class="category-label">${escapeHTML(categories)}</span></div>
+                <h2>${escapeHTML(entry.title)}</h2>
+                <p class="entry-copy__summary">${escapeHTML(entry.summary)}</p>
+                <p class="entry-copy__description">${escapeHTML(entry.description)}</p>
+                <ul class="tags" aria-label="Project tools">${tags}</ul>
+                <span class="card-cta">Open case study</span>
+              </div>
+            </a>
+          </article>
+        </li>`;
+      }).join("");
+      emptyState.classList.toggle("is-visible", visible.length === 0);
+      observeReveals();
+    }
+
+    const revealObserver = "IntersectionObserver" in window ? new IntersectionObserver((items, observer) => {
+      items.forEach((item) => {
+        if (item.isIntersecting) {
+          item.target.classList.add("is-visible");
+          observer.unobserve(item.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -7% 0px", threshold: 0.05 }) : null;
+
+    function observeReveals() {
+      document.querySelectorAll(".reveal:not(.is-visible)").forEach((item) => {
+        if (reducedMotion.matches || !revealObserver) item.classList.add("is-visible");
+        else revealObserver.observe(item);
+      });
+    }
+
+    function renderThumbnails() {
+      const target = document.getElementById("thumbnails");
+      if (!activeEntry.images.length) {
+        target.innerHTML = `<div class="thumbnail thumbnail-placeholder" aria-hidden="true">Photos to add</div>`;
+        return;
+      }
+      target.innerHTML = activeEntry.images.map((image, index) => `<button class="thumbnail" type="button" data-thumbnail="${index}" aria-label="Show photo ${index + 1}: ${escapeHTML(image.alt)}" aria-current="${index === activeImage}">${imageMarkup(image, activeEntry, index)}</button>`).join("");
+    }
+
+    function showImage(index) {
+      if (!activeEntry?.images.length) return;
+      activeImage = (index + activeEntry.images.length) % activeEntry.images.length;
+      const image = activeEntry.images[activeImage];
+      const stage = document.getElementById("gallery-stage");
+      stage.innerHTML = `<button class="gallery-main" id="zoom-image" type="button" aria-label="Zoom photo: ${escapeHTML(image.alt)}">${imageMarkup(image, activeEntry, activeImage)}</button>
+        ${activeEntry.images.length > 1 ? `<button class="gallery-arrow gallery-arrow--prev" type="button" data-step="-1" aria-label="Previous photo">←</button><button class="gallery-arrow gallery-arrow--next" type="button" data-step="1" aria-label="Next photo">→</button>` : ""}
+        <span class="gallery-count" aria-live="polite">${String(activeImage + 1).padStart(2, "0")} / ${String(activeEntry.images.length).padStart(2, "0")}</span>`;
+      document.getElementById("gallery-caption").textContent = image.caption || image.alt;
+      document.querySelectorAll(".thumbnail").forEach((button, buttonIndex) => button.setAttribute("aria-current", String(buttonIndex === activeImage)));
+      if (lightbox.open) {
+        const largeImage = document.getElementById("lightbox-image");
+        largeImage.src = image.src;
+        largeImage.alt = image.alt;
+        document.getElementById("lightbox-caption").textContent = image.caption || image.alt;
+      }
+    }
+
+    function openEntry(index) {
+      activeEntry = ENTRIES[index];
+      if (!activeEntry) return;
+      activeImage = 0;
+      document.getElementById("detail-date").textContent = activeEntry.date;
+      document.getElementById("detail-category").textContent = activeEntry.categories.map((category) => categoryNames[category] || category).join(" / ");
+      document.getElementById("detail-title").textContent = activeEntry.title;
+      document.getElementById("detail-summary").textContent = activeEntry.summary;
+      document.getElementById("detail-description").textContent = activeEntry.description;
+      document.getElementById("detail-tags").innerHTML = activeEntry.tags.map((tag) => `<li class="tag">${escapeHTML(tag)}</li>`).join("");
+      if (activeEntry.images.length) {
+        renderThumbnails();
+        showImage(0);
+      } else {
+        document.getElementById("gallery-stage").innerHTML = placeholderMarkup(activeEntry.title);
+        document.getElementById("gallery-caption").textContent = "Add images to this entry's images array to enable the photo carousel.";
+        renderThumbnails();
+      }
+      detailDialog.showModal();
+      document.getElementById("detail-close").focus();
+    }
+
+    document.querySelectorAll(".filter").forEach((button) => button.addEventListener("click", () => {
+      document.querySelectorAll(".filter").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+      renderEntries(button.dataset.filter);
+    }));
+
+    document.addEventListener("click", (event) => {
+      const entryLink = event.target.closest("[data-open-entry]");
+      if (entryLink) {
+        event.preventDefault();
+        openEntry(Number(entryLink.dataset.openEntry));
+        return;
+      }
+      const thumbnail = event.target.closest("[data-thumbnail]");
+      if (thumbnail) showImage(Number(thumbnail.dataset.thumbnail));
+      const step = event.target.closest("[data-step]");
+      if (step) showImage(activeImage + Number(step.dataset.step));
+      if (event.target.closest("#zoom-image")) {
+        const image = activeEntry.images[activeImage];
+        document.getElementById("lightbox-image").src = image.src;
+        document.getElementById("lightbox-image").alt = image.alt;
+        document.getElementById("lightbox-caption").textContent = image.caption || image.alt;
+        lightbox.showModal();
+        document.getElementById("lightbox-close").focus();
+      }
+    });
+
+    document.getElementById("detail-close").addEventListener("click", () => detailDialog.close());
+    document.getElementById("lightbox-close").addEventListener("click", () => lightbox.close());
+    [detailDialog, lightbox].forEach((dialog) => dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); }));
+    document.addEventListener("keydown", (event) => {
+      if (detailDialog.open && activeEntry?.images.length && event.key === "ArrowRight") showImage(activeImage + 1);
+      if (detailDialog.open && activeEntry?.images.length && event.key === "ArrowLeft") showImage(activeImage - 1);
+      if (lightbox.open && event.key === "ArrowRight") showImage(activeImage + 1);
+      if (lightbox.open && event.key === "ArrowLeft") showImage(activeImage - 1);
+    });
+
+    renderEntries();
+  </script>
 </body>
 </html>
