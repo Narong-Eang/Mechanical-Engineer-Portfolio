@@ -4,293 +4,238 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Engineering portfolio of Hynarong Eang, Mechanical Engineering student at RMIT University, Melbourne.">
+  <meta name="description" content="Bio of Hynarong Eang, Mechanical Engineering student at RMIT University, Melbourne.">
   <title>Hynarong Eang | Engineering Portfolio</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body id="top" data-page="projects">
+<body id="top" data-page="bio">
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div id="site-header"></div>
   <main id="main-content" class="page-main">
-    <header class="page-heading"><h1 id="page-title">Engineering Projects &amp; Experience</h1><p class="page-heading__intro">A record of engineering work. Each project opens into a visual case study.</p></header>
-
-    <section id="timeline" aria-label="Engineering project timeline">
-      <ol class="timeline" id="timeline-list"></ol>
+    <header class="page-heading"><h1>Hynarong Eang</h1><p class="page-heading__intro">Mechanical Engineering student at RMIT University, Melbourne, Victoria, Australia.</p><div class="actions"><a class="button" href="resume/Hynarong-Eang-Resume.pdf" download>Download Resume (PDF)</a><a class="button button--light" href="https://www.linkedin.com/in/hynarong-eang" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></div></header>
+    <section class="resume-section" aria-labelledby="summary-title">
+      <h2 class="section-heading" id="summary-title"><span class="section-kicker">01</span> Summary</h2>
+      <p class="summary">Mechanical Engineering student at RMIT University, Melbourne, with hands-on experience in CAD modelling, prototyping and mechanical design through project and team work. I have contributed to rover design, engineering analysis, physical prototyping and software development in multidisciplinary projects.</p>
+    </section>
+    <section class="resume-section" aria-labelledby="experience-title">
+      <h2 class="section-heading" id="experience-title"><span class="section-kicker">02</span> Work Experience</h2>
+      <div class="education-list" id="experience-list"></div>
+    </section>
+    <section class="resume-section" aria-labelledby="projects-title">
+      <h2 class="section-heading" id="projects-title"><span class="section-kicker">03</span> Projects</h2>
+      <ol class="project-list" id="project-list"></ol>
+    </section>
+    <section class="resume-section" aria-labelledby="education-title">
+      <h2 class="section-heading" id="education-title"><span class="section-kicker">04</span> Education</h2>
+      <div class="education-list" id="education-list"></div>
+      <p class="grade-legend" id="grade-legend" hidden>HD = High Distinction · DI = Distinction · CR = Credit</p>
+    </section>
+    <section class="resume-section" aria-labelledby="skills-title">
+      <h2 class="section-heading" id="skills-title"><span class="section-kicker">05</span> Skills and Software</h2>
+      <div class="skill-groups" id="skill-groups">
+        <details class="skill-group"><summary>CAD and Mechanical Design</summary><div class="skill-group__body"><p>Modelled and assembled mechanical parts and prepared engineering drawings for rover design work.</p><ul class="tags"><li class="tag">SolidWorks</li><li class="tag">CATIA</li><li class="tag">Onshape</li><li class="tag">CAD modelling</li><li class="tag">Assembly modelling</li><li class="tag">Engineering drawings</li></ul></div></details>
+        <details class="skill-group"><summary>Simulation and Analysis</summary><div class="skill-group__body"><p>Used computational and engineering analysis in thermal, fluid and structural coursework and project work.</p><ul class="tags"><li class="tag">ANSYS</li><li class="tag">CFD</li><li class="tag">Thermal analysis</li><li class="tag">Hydraulic calculations</li><li class="tag">Material selection</li></ul></div></details>
+        <details class="skill-group"><summary>Programming and Computation</summary><div class="skill-group__body"><p>Applied programming and computation to unit conversion, control-system modelling and the LPBF project’s technical work.</p><ul class="tags"><li class="tag">MATLAB</li><li class="tag">Simulink</li><li class="tag">Python</li><li class="tag">C++</li><li class="tag">Excel</li></ul></div></details>
+        <details class="skill-group"><summary>Electronics and Prototyping</summary><div class="skill-group__body"><p>Built and tested electronic and physical prototypes, including a breadboard traffic-light system and rover mechanisms.</p><ul class="tags"><li class="tag">Arduino UNO</li><li class="tag">Breadboard prototyping</li><li class="tag">Physical prototyping</li><li class="tag">Testing and troubleshooting</li><li class="tag">3D printing</li></ul></div></details>
+        <details class="skill-group"><summary>Engineering Fundamentals</summary><div class="skill-group__body"><p>Applied core engineering principles across mechanical, thermal and fluid-system project work.</p><ul class="tags"><li class="tag">Thermodynamics</li><li class="tag">Heat transfer</li><li class="tag">Fluid systems</li><li class="tag">Pump selection</li><li class="tag">Solid mechanics</li></ul></div></details>
+        <details class="skill-group"><summary>Teamwork and Communication</summary><div class="skill-group__body"><p>Dedicated, results-driven, with strong communication skills. Worked with multidisciplinary project groups.</p><ul class="tags"><li class="tag">Multidisciplinary teamwork</li></ul></div></details>
+      </div>
+    </section>
+    <section class="resume-section" aria-labelledby="certificates-title">
+      <h2 class="section-heading" id="certificates-title"><span class="section-kicker">06</span> Certificates</h2>
+      <ul class="certificates" id="certificate-list"></ul>
+    </section>
+    <section class="resume-section" aria-labelledby="contact-title">
+      <h2 class="section-heading" id="contact-title"><span class="section-kicker">07</span> Contact</h2>
+      <div class="contact-row"><a href="https://www.linkedin.com/in/hynarong-eang" target="_blank" rel="noopener noreferrer">LinkedIn profile</a><span>Email: <a href="mailto:narongeang123@gmail.com">narongeang123@gmail.com</a></span></div>
     </section>
   </main>
   <div id="site-footer"></div>
-
-  <dialog class="detail-dialog" id="detail-dialog" aria-labelledby="detail-title">
-    <div class="detail-shell">
-      <div class="detail-top">
-        <span class="detail-top__date" id="detail-date"></span>
-        <button class="close-button" id="detail-close" type="button" aria-label="Close project details">Close ×</button>
-      </div>
-      <div class="detail-scroll">
-        <div class="detail-grid">
-          <section class="gallery" aria-label="Project photo gallery">
-            <div class="gallery-stage" id="gallery-stage"></div>
-            <p class="gallery-caption" id="gallery-caption" aria-live="polite"></p>
-            <div class="thumbnails" id="thumbnails" role="group" aria-label="Project image thumbnails"></div>
-          </section>
-          <article class="detail-copy">
-            <p class="eyebrow" id="detail-category"></p>
-            <h2 id="detail-title"></h2>
-            <p class="detail-event-badge" id="detail-badge" hidden></p>
-            <p class="detail-copy__summary" id="detail-summary"></p>
-            <div class="detail-copy__description" id="detail-description"></div>
-            <div class="detail-documents" id="detail-documents" hidden></div>
-            <ul class="tags" id="detail-tags" aria-label="Tools and project tags"></ul>
-          </article>
-        </div>
-      </div>
+  <dialog class="certificate-lightbox" id="certificate-lightbox" aria-label="Certificate image lightbox">
+    <div class="certificate-lightbox__frame">
+      <button class="close-button" id="certificate-lightbox-close" type="button" aria-label="Close certificate image">×</button>
+      <img id="certificate-lightbox-image" alt="Enlarged certificate image">
+      <p class="certificate-lightbox__caption" id="certificate-lightbox-caption"></p>
     </div>
   </dialog>
-
-  <dialog class="lightbox" id="lightbox" aria-label="Expanded project photo">
-    <div class="lightbox__frame">
-      <button class="close-button" id="lightbox-close" type="button" aria-label="Close expanded photo">Close ×</button>
-      <img id="lightbox-image" alt="">
-      <p class="lightbox__caption" id="lightbox-caption"></p>
-    </div>
-  </dialog>
-
   <script src="site.js"></script>
   <script src="entries.js"></script>
   <script>
-    const ENTRIES = window.ENTRIES;
+    const SHOW_GRADES = true; // Set false to hide program and course grades everywhere.
+    const EXPERIENCE = [
+      {
+        role: "Payload Team Member",
+        projectId: "rover-team",
+        organisation: "RMIT Rover Team",
+        dates: "2026 – Present",
+        description: "Designed and assembled the payload-handling gripper in Onshape, then refined it through design reviews and iterations. The redesign cut the end-effector's weight by 10%, simplified the wiring and improved its appearance.",
+        bullets: [],
+        tags: ["Onshape", "CAD modelling", "Mechanical design", "Prototyping"]
+      },
+      {
+        role: "Software Developer",
+        projectId: "microscopic-materials-venture",
+        organisation: "Microscopic Materials Venture",
+        type: "Freelance",
+        dates: "Nov 2025 – Apr 2026",
+        duration: "6 months",
+        location: "Melbourne, Victoria, Australia (Hybrid)",
+        event: "Deakin Defence Conference 2026",
+        description: "Contributed as a software developer in a collaborative group tackling Laser Powder Bed Fusion (LPBF), an advanced metal additive manufacturing process with applications in the defence sector. Applied and developed skills in C++ and Python to support the technical and computational aspects of the project.",
+        bullets: [
+          "Collaborated in a multidisciplinary team on a real-world defence engineering challenge.",
+          "Wrote and debugged code in C++ and Python as part of the technical solution.",
+          "Gained exposure to additive manufacturing and defence technology domains.",
+          "Developed problem-solving and engineering software skills in a professional conference setting.",
+          "Presented the group's work at the Deakin Defence Conference 2026."
+        ],
+        tags: ["C++", "Python", "Additive manufacturing (LPBF)", "Teamwork", "Presenting"]
+      },
+      {
+        role: "Engineering Innovation Intern",
+        organisation: "Engineering & Scientific International",
+        type: "Internship",
+        dates: "Jun 2024 – Jul 2024 (2 months)",
+        location: "Melbourne, Victoria, Australia (Hybrid)",
+        bullets: [
+          "Conducted a comprehensive PESTEL analysis to evaluate market conditions and identify a viable product-market fit for the company's patented triple-glazed window IP, directly informing growth and marketing strategy.",
+          "Synthesised findings into actionable strategic recommendations, supporting senior decision-makers in navigating a competitive and emerging market landscape.",
+          "Gained firsthand exposure to the startup ecosystem, developing a practical understanding of how early-stage companies validate and commercialise innovative intellectual property."
+        ],
+        tags: ["Enterprise Consulting", "Consulting", "PESTEL Analysis"]
+      }
+    ];
+    const EDUCATION = [
+      {
+        kind: "Bachelor",
+        qualification: "Bachelor of Engineering (Mechanical Engineering) (Honours)",
+        institution: "RMIT University",
+        location: "Melbourne",
+        status: "In progress",
+        date: "2027",
+        completion: "Expected completion: Semester 2 2027",
+        programGPA: "3.2",
+        wam: "79",
+        coursework: [
+          { label: "Semester 1 2024", group: "Completed", courses: [{title:"Engineering Mathematics",grade:"DI"},{title:"Engineering Science",grade:"HD"},{title:"Digital Fundamentals",grade:"DI"},{title:"Introduction to Professional Engineering Practice",grade:"DI"}] },
+          { label: "Semester 2 2024", group: "Completed", courses: [{title:"Introduction to Mechanical Engineering",grade:"HD"},{title:"Applied Thermodynamics",grade:"CR"},{title:"Introduction to Engineering Design",grade:"HD"},{title:"Innovation Ecosystems and Future of Work",grade:"HD"}] },
+          { label: "Semester 1 2025", group: "Completed", courses: [{title:"Fluid Mechanics",grade:"DI"},{title:"Advanced Mathematics for Engineers",grade:"HD"},{title:"Mechatronics Principles",grade:"DI"},{title:"Engineering Dynamics",grade:"DI"}] },
+          { label: "Semester 2 2025", group: "Completed", courses: [{title:"Mechanical Design 1",grade:"DI"},{title:"Mechanics and Materials 2",grade:"CR"},{title:"Introduction to Environmental and Sustainable Systems Engineering",grade:"DI"},{title:"Mechanics of Machines",grade:"CR"}] },
+          { label: "Semester 1 2026", group: "Completed", courses: [{title:"Heat Transfer",grade:"HD"},{title:"Engineering Computer Graphics",grade:"HD"},{title:"Solid Mechanics 3",grade:"DI"},{title:"Engineering and Entrepreneurship",grade:"DI"}] },
+          { label: "In progress · Semester 2 2026", group: "In progress", courses: [{title:"Finite Element Analysis"},{title:"Mechanical Design 2"},{title:"Manufacturing Systems Modelling"},{title:"Systems Engineering Principles"}] },
+          { label: "Planned · Semester 1 2027", group: "Planned", courses: [{title:"Computer Integrated Manufacturing"},{title:"Thermal-Fluid System Design"},{title:"Advanced Manufacturing and Design"},{title:"Engineering Capstone Project A"}] },
+          { label: "Planned · Semester 2 2027", group: "Planned", courses: [{title:"Automatic Control"},{title:"Engineering Capstone Project B"}] }
+        ]
+      },
+      {
+        kind: "Foundation",
+        date: "2024",
+        qualification: "Foundation Studies: Engineering & Science (Preparatory Program)",
+        institution: "[confirm institution]",
+        location: "",
+        status: "Completed",
+        completion: "Conferred 31 January 2024",
+        programGPA: "3.9",
+        coursework: [
+          { label: "", group: "Completed", courses: [{title:"Physics",grade:"HD"},{title:"Chemistry",grade:"DI"},{title:"Advanced Mathematics",grade:"HD"},{title:"Applied Mathematics",grade:"HD"},{title:"Statistics and Probability",grade:"HD"},{title:"Data Analytics",grade:"HD"},{title:"Comparative Texts",grade:"HD"},{title:"Exploring Narratives",grade:"HD"}] }
+        ]
+      }
+    ];
+    const CERTIFICATES = [
+      { image: "certificates/practera-certificate.jpg", logo: "photos/practera-logo.png", alt: "Practera certificate" }
+    ];
 
-    document.documentElement.classList.add("js");
-    const timelineList = document.getElementById("timeline-list");
-    const detailDialog = document.getElementById("detail-dialog");
-    const lightbox = document.getElementById("lightbox");
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let activeEntry = null;
-    let activeImage = 0;
+    const escapeHTML = (value) => String(value).replace(/[&<>"']/g, (character) => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", "\"":"&quot;", "'":"&#39;" })[character]);
+    
+    document.getElementById("project-list").innerHTML = window.ENTRIES.map((entry) => `
+      <li><a class="project-item" href="projects.html#${escapeHTML(entry.id)}">
+        <span class="project-item__title">${escapeHTML(entry.title)}</span><time class="project-item__date">${escapeHTML(entry.date)}</time>
+        <span class="project-item__summary">${escapeHTML(entry.summary)}</span>
+      </a></li>`).join("");
+    document.getElementById("experience-list").innerHTML = EXPERIENCE.map((role) => `
+      <article class="experience-card">
+        <header class="experience-header"><div><h3>${role.projectId ? `<a class="experience-project-title" href="projects.html#${escapeHTML(role.projectId)}" aria-label="View project: ${escapeHTML(role.organisation)} — ${escapeHTML(role.role)}">${escapeHTML(role.role)}</a>` : escapeHTML(role.role)}</h3><p class="experience-org">${escapeHTML(role.organisation)}</p></div>${role.type ? `<span class="experience-type">${escapeHTML(role.type)}</span>` : ""}</header>
+        <p class="experience-dates">${escapeHTML(role.dates)}${role.duration ? ` · ${escapeHTML(role.duration)}` : ""}</p>
+        ${role.event ? `<p class="event-highlight">${escapeHTML(role.event)}</p>` : ""}
+        ${role.location ? `<p class="experience-location">${escapeHTML(role.location)}</p>` : ""}
+        ${role.description ? `<p class="experience-description">${escapeHTML(role.description)}</p>` : ""}
+        ${role.bullets?.length ? `<ul class="experience-bullets">${role.bullets.map((bullet) => `<li>${escapeHTML(bullet)}</li>`).join("")}</ul>` : ""}
+        ${role.tags?.length ? `<ul class="tags" aria-label="Experience skills">${role.tags.map((tag) => `<li class="tag">${escapeHTML(tag)}</li>`).join("")}</ul>` : ""}
+        ${role.projectId ? `<a class="experience-project-link" href="projects.html#${escapeHTML(role.projectId)}" aria-label="View project: ${escapeHTML(role.organisation)}">View project <span aria-hidden="true">↗</span></a>` : ""}
+      </article>`).join("");
 
-    const escapeHTML = (value) => String(value).replace(/[&<>"']/g, (character) => ({
-      "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;"
-    })[character]);
-
-    const categoryNames = { design: "Design", analysis: "Analysis", team: "Team project" };
-
-    function placeholderMarkup(title, compact = false) {
-      const label = compact ? "Add project photos to the images array" : "Project photo to add";
-      return `<div class="photo-placeholder${compact ? " photo-placeholder--compact" : ""}" role="img" aria-label="Photo placeholder for ${escapeHTML(title)}">
-        <div class="photo-placeholder__text"><span class="photo-placeholder__symbol" aria-hidden="true">＋</span><span class="photo-placeholder__label">${label}</span><span class="photo-placeholder__project">${escapeHTML(title)}</span></div>
-      </div>`;
+    function renderCoursework(groups) {
+      const priorities = { Planned: 0, "In progress": 1, Completed: 2 };
+      const orderedGroups = window.sortByDate(groups, (group) => group.label, (group) => priorities[group.group] ?? 3);
+      return `<details class="coursework"><summary>Relevant Coursework</summary><div class="coursework__groups">${orderedGroups.map((group) => `
+        <section class="course-group">${group.label ? `<h4>${escapeHTML(group.label)}</h4>` : ""}<ul class="course-list">${group.courses.map((course) => `
+          <li><span>${escapeHTML(course.title)}</span>${SHOW_GRADES && course.grade ? `<span class="course-grade">${escapeHTML(course.grade)}</span>` : ""}</li>`).join("")}</ul></section>`).join("")}</div></details>`;
     }
+    const sortedEducation = window.sortByDate(EDUCATION);
+    document.getElementById("education-list").innerHTML = sortedEducation.map((item) => `
+      <article class="education-card">
+        <h3 class="education-heading">${escapeHTML(item.qualification)}</h3>
+        <p class="education-institution">${escapeHTML(item.institution)}${item.location ? ` · ${escapeHTML(item.location)}` : ""}</p>
+        <span class="education-status">${escapeHTML(item.status)}</span>
+        <p class="education-completion">${escapeHTML(item.completion)}</p>
+        ${SHOW_GRADES ? `<p class="grade-summary">Program GPA: ${escapeHTML(item.programGPA)}${item.wam ? ` · WAM: ${escapeHTML(item.wam)}` : ""}</p>` : ""}
+        ${renderCoursework(item.coursework)}
+      </article>`).join("");
+    document.getElementById("grade-legend").hidden = !SHOW_GRADES;
 
-    function documentCoverMarkup(title) {
-      return `<div class="photo-placeholder" role="img" aria-label="PDF report for ${escapeHTML(title)}"><div class="document-cover"><span class="document-cover__icon" aria-hidden="true">▤</span><span>PDF report</span></div></div>`;
-    }
-
-    function imageMarkup(image, entry, index, className = "") {
-      return `<img class="${className}" src="${escapeHTML(image.src)}" alt="${escapeHTML(image.alt)}" loading="lazy" decoding="async" width="1400" height="900" data-image-index="${index}" data-project-id="${escapeHTML(entry.id)}">`;
-    }
-
-    document.addEventListener("error", (event) => {
+    const certificateList = document.getElementById("certificate-list");
+    const certificateLightbox = document.getElementById("certificate-lightbox");
+    const certificateLightboxImage = document.getElementById("certificate-lightbox-image");
+    let certificateTrigger = null;
+    certificateList.addEventListener("error", (event) => {
       const image = event.target;
-      if (!(image instanceof HTMLImageElement)) return;
-      if (image.id === "lightbox-image") {
-        image.hidden = true;
-        const frame = image.closest(".lightbox__frame");
-        if (frame && !frame.querySelector(".photo-placeholder")) frame.insertAdjacentHTML("afterbegin", placeholderMarkup(activeEntry?.title || "Project photo"));
-        return;
-      }
-      if (!image.dataset.projectId) return;
-      const entry = ENTRIES.find((item) => item.id === image.dataset.projectId);
-      if (!entry) return;
-      const thumbnail = image.closest(".thumbnail");
-      if (thumbnail) {
-        thumbnail.innerHTML = `<span class="thumbnail-placeholder">Photo unavailable</span>`;
-        return;
-      }
-      const cover = image.closest(".cover");
-      const stage = image.closest(".gallery-stage");
-      if (cover) cover.innerHTML = placeholderMarkup(entry.title);
-      else if (stage) stage.innerHTML = placeholderMarkup(entry.title);
+      if (!(image instanceof HTMLImageElement) || !image.dataset.placeholderLabel) return;
+      const fallback = document.createElement("div");
+      fallback.className = `certificate-placeholder ${image.dataset.placeholderKind || ""}`;
+      fallback.setAttribute("role", "img");
+      fallback.setAttribute("aria-label", image.dataset.placeholderLabel);
+      fallback.textContent = image.dataset.placeholderLabel;
+      const button = image.closest(".certificate-image-button");
+      if (button) button.replaceWith(fallback); else image.replaceWith(fallback);
     }, true);
-
-    function renderEntries() {
-      timelineList.innerHTML = ENTRIES.map((entry, index) => {
-        const categories = entry.categories.map((category) => categoryNames[category] || category).join(" · ");
-        const tags = entry.tags.map((tag) => `<li class="tag">${escapeHTML(tag)}</li>`).join("");
-        const directDocument = entry.openDocumentDirectly && entry.documents?.length === 1 ? entry.documents[0] : null;
-        const cover = entry.images.length ? imageMarkup(entry.images[0], entry, 0) : entry.documents?.length ? documentCoverMarkup(entry.title) : placeholderMarkup(entry.title);
-        const cardTarget = directDocument
-          ? `href="${escapeHTML(directDocument.href)}" target="_blank" rel="noopener noreferrer"`
-          : `href="#detail-dialog" data-open-entry="${index}"`;
-        return `<li class="timeline-item reveal">
-          <span class="timeline-node" aria-hidden="true"><span class="timeline-node__dot"></span><span class="timeline-node__index">${String(index + 1).padStart(2, "0")}</span></span>
-          <article class="entry-card" id="${escapeHTML(entry.id)}">
-            <a class="entry-link" ${cardTarget} aria-label="${directDocument ? "Open PDF report for " : "Open "}${escapeHTML(entry.title)}${directDocument ? " in a new tab" : " details"}">
-              <div class="cover">${cover}</div>
-              <div class="entry-copy">
-                <div class="entry-copy__meta"><time class="timeline-date">${escapeHTML(entry.date)}</time><span class="category-label">${escapeHTML(categories)}</span></div>
-                <h2>${escapeHTML(entry.title)}</h2>
-                ${entry.badge ? `<p class="entry-badge">${escapeHTML(entry.badge)}</p>` : ""}
-                <p class="entry-copy__summary">${escapeHTML(entry.summary)}</p>
-                <p class="entry-copy__description">${escapeHTML(entry.description)}</p>
-                <ul class="tags" aria-label="Project tools">${tags}</ul>
-                <span class="card-cta">${directDocument ? "Open PDF" : "Open Case Study"}</span>
-              </div>
-            </a>
-          </article>
-        </li>`;
-      }).join("");
-      observeReveals();
-    }
-
-    const revealObserver = "IntersectionObserver" in window ? new IntersectionObserver((items, observer) => {
-      items.forEach((item) => {
-        if (item.isIntersecting) {
-          item.target.classList.add("is-visible");
-          observer.unobserve(item.target);
-        }
-      });
-    }, { rootMargin: "0px 0px -7% 0px", threshold: 0.05 }) : null;
-
-    function observeReveals() {
-      document.querySelectorAll(".reveal:not(.is-visible)").forEach((item) => {
-        if (reducedMotion.matches || !revealObserver) item.classList.add("is-visible");
-        else revealObserver.observe(item);
-      });
-    }
-
-    function renderThumbnails() {
-      const target = document.getElementById("thumbnails");
-      if (!activeEntry.images.length) {
-        target.innerHTML = `<div class="thumbnail thumbnail-placeholder" aria-hidden="true">${activeEntry.documents?.length ? "PDF report" : "Photos to add"}</div>`;
-        return;
-      }
-      target.innerHTML = activeEntry.images.map((image, index) => `<button class="thumbnail" type="button" data-thumbnail="${index}" aria-label="Show photo ${index + 1}: ${escapeHTML(image.alt)}" aria-current="${index === activeImage}">${imageMarkup(image, activeEntry, index)}</button>`).join("");
-    }
-
-    function showImage(index) {
-      if (!activeEntry?.images.length) return;
-      activeImage = (index + activeEntry.images.length) % activeEntry.images.length;
-      const image = activeEntry.images[activeImage];
-      const stage = document.getElementById("gallery-stage");
-      stage.innerHTML = `<button class="gallery-main" id="zoom-image" type="button" aria-label="Zoom photo: ${escapeHTML(image.alt)}">${imageMarkup(image, activeEntry, activeImage)}</button>
-        ${activeEntry.images.length > 1 ? `<button class="gallery-arrow gallery-arrow--prev" type="button" data-step="-1" aria-label="Previous photo">←</button><button class="gallery-arrow gallery-arrow--next" type="button" data-step="1" aria-label="Next photo">→</button>` : ""}
-        <span class="gallery-count" aria-live="polite">${String(activeImage + 1).padStart(2, "0")} / ${String(activeEntry.images.length).padStart(2, "0")}</span>`;
-      document.getElementById("gallery-caption").textContent = image.caption || image.alt;
-      document.querySelectorAll(".thumbnail").forEach((button, buttonIndex) => button.setAttribute("aria-current", String(buttonIndex === activeImage)));
-      if (lightbox.open) {
-        const largeImage = document.getElementById("lightbox-image");
-        largeImage.hidden = false;
-        lightbox.querySelector(".photo-placeholder")?.remove();
-        largeImage.src = image.src;
-        largeImage.alt = image.alt;
-        document.getElementById("lightbox-caption").textContent = image.caption || image.alt;
-      }
-    }
-
-    function openEntry(index) {
-      activeEntry = ENTRIES[index];
-      if (!activeEntry) return;
-      activeImage = 0;
-      document.getElementById("detail-date").textContent = activeEntry.date;
-      document.getElementById("detail-category").textContent = activeEntry.categories.map((category) => categoryNames[category] || category).join(" / ");
-      document.getElementById("detail-title").textContent = activeEntry.title;
-      const detailBadge = document.getElementById("detail-badge");
-      detailBadge.textContent = activeEntry.badge || "";
-      detailBadge.hidden = !activeEntry.badge;
-      document.getElementById("detail-summary").textContent = activeEntry.summary;
-      document.getElementById("detail-description").textContent = activeEntry.description;
-      const documents = activeEntry.documents || [];
-      const documentLinks = document.getElementById("detail-documents");
-      documentLinks.hidden = documents.length === 0;
-      documentLinks.innerHTML = documents.map((document) => `<a class="document-link" href="${escapeHTML(document.href)}" target="_blank" rel="noopener noreferrer">${escapeHTML(document.label)}</a>`).join("");
-      document.getElementById("detail-tags").innerHTML = activeEntry.tags.map((tag) => `<li class="tag">${escapeHTML(tag)}</li>`).join("");
-      if (activeEntry.images.length) {
-        renderThumbnails();
-        showImage(0);
-      } else {
-        document.getElementById("gallery-stage").innerHTML = documents.length ? documentCoverMarkup(activeEntry.title) : placeholderMarkup(activeEntry.title);
-        document.getElementById("gallery-caption").textContent = documents.length ? "PDF report" : "Add images to this entry's images array to enable the photo carousel.";
-        renderThumbnails();
-      }
-      detailDialog.showModal();
-      document.getElementById("detail-close").focus();
-    }
-
-    document.addEventListener("click", (event) => {
-      const entryLink = event.target.closest("[data-open-entry]");
-      if (entryLink) {
-        event.preventDefault();
-        openEntry(Number(entryLink.dataset.openEntry));
-        return;
-      }
-      const thumbnail = event.target.closest("[data-thumbnail]");
-      if (thumbnail) showImage(Number(thumbnail.dataset.thumbnail));
-      const step = event.target.closest("[data-step]");
-      if (step) showImage(activeImage + Number(step.dataset.step));
-      if (event.target.closest("#zoom-image")) {
-        const image = activeEntry.images[activeImage];
-        const lightboxImage = document.getElementById("lightbox-image");
-        lightboxImage.hidden = false;
-        lightbox.querySelector(".photo-placeholder")?.remove();
-        lightboxImage.src = image.src;
-        lightboxImage.alt = image.alt;
-        document.getElementById("lightbox-caption").textContent = image.caption || image.alt;
-        lightbox.showModal();
-        document.getElementById("lightbox-close").focus();
-      }
+    certificateList.innerHTML = CERTIFICATES.map((certificate) => {
+      const alt = escapeHTML(certificate.alt || "Certificate image");
+      const logo = certificate.logo
+        ? `<div class="certificate-logo-slot"><img src="${escapeHTML(certificate.logo)}" alt="Practera logo" loading="lazy" decoding="async" data-placeholder-label="Practera logo to add" data-placeholder-kind="certificate-placeholder--logo"></div>`
+        : `<div class="certificate-placeholder certificate-placeholder--logo" role="img" aria-label="Practera logo to add">Practera logo to add</div>`;
+      const image = certificate.image
+        ? `<button class="certificate-image-button" type="button" data-certificate-lightbox aria-label="Enlarge ${alt}"><img src="${escapeHTML(certificate.image)}" alt="${alt}" loading="lazy" decoding="async" data-placeholder-label="Certificate image to add" data-placeholder-kind="certificate-placeholder--image"></button>`
+        : `<div class="certificate-placeholder certificate-placeholder--image" role="img" aria-label="Certificate image to add">Certificate image to add</div>`;
+      return `<li class="certificate-item">${logo}${image}</li>`;
+    }).join("");
+    certificateList.addEventListener("click", (event) => {
+      const trigger = event.target.closest("[data-certificate-lightbox]");
+      if (!trigger) return;
+      const image = trigger.querySelector("img");
+      if (!image) return;
+      certificateTrigger = trigger;
+      certificateLightboxImage.src = image.currentSrc || image.src;
+      certificateLightboxImage.alt = image.alt;
+      document.getElementById("certificate-lightbox-caption").textContent = image.alt;
+      certificateLightbox.showModal();
+      document.getElementById("certificate-lightbox-close").focus();
     });
+    document.getElementById("certificate-lightbox-close").addEventListener("click", () => certificateLightbox.close());
+    certificateLightbox.addEventListener("click", (event) => { if (event.target === certificateLightbox) certificateLightbox.close(); });
+    certificateLightbox.addEventListener("close", () => certificateTrigger?.focus());
 
-    document.getElementById("detail-close").addEventListener("click", () => detailDialog.close());
-    document.getElementById("lightbox-close").addEventListener("click", () => lightbox.close());
-    [detailDialog, lightbox].forEach((dialog) => dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); }));
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        if (lightbox.open) { event.preventDefault(); lightbox.close(); return; }
-        if (detailDialog.open) { event.preventDefault(); detailDialog.close(); return; }
-      }
-      if (!activeEntry?.images.length) return;
-      const step = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
-      if (!step) return;
-      event.preventDefault();
-      const focusedArrow = event.target.closest?.("[data-step]");
-      showImage(activeImage + step);
-      if (focusedArrow && !lightbox.open) document.querySelector(`.gallery-arrow[data-step="${focusedArrow.dataset.step}"]`)?.focus();
+    const skillDetails = [...document.querySelectorAll(".skill-group")];
+    const desktopSkills = window.matchMedia("(min-width: 760px)");
+    function syncSkillDisclosure() { skillDetails.forEach((item) => { item.open = desktopSkills.matches; }); }
+    syncSkillDisclosure();
+    desktopSkills.addEventListener?.("change", syncSkillDisclosure);
+    let savedDisclosure = [];
+    window.addEventListener("beforeprint", () => {
+      savedDisclosure = [...document.querySelectorAll("details")].map((item) => item.open);
+      document.querySelectorAll("details").forEach((item) => { item.open = true; });
     });
-
-    let highlightTimeout;
-    let highlightedCard = null;
-    function scrollToProjectFromHash() {
-      if (!window.location.hash) return;
-      let requestedProject;
-      try { requestedProject = decodeURIComponent(window.location.hash.slice(1)); }
-      catch { return; }
-      const card = document.getElementById(requestedProject);
-      if (!card?.classList.contains("entry-card")) return;
-
-      const timelineItem = card.closest(".timeline-item");
-      timelineItem?.classList.add("is-visible");
-      if (timelineItem) revealObserver?.unobserve(timelineItem);
-
-      requestAnimationFrame(() => requestAnimationFrame(() => {
-        card.scrollIntoView({ block: "start", behavior: reducedMotion.matches ? "auto" : "smooth" });
-        if (highlightedCard && highlightedCard !== card) highlightedCard.classList.remove("is-highlighted");
-        card.classList.remove("is-highlighted");
-        void card.offsetWidth;
-        card.classList.add("is-highlighted");
-        highlightedCard = card;
-        window.clearTimeout(highlightTimeout);
-        highlightTimeout = window.setTimeout(() => {
-          card.classList.remove("is-highlighted");
-          if (highlightedCard === card) highlightedCard = null;
-        }, 2050);
-      }));
-    }
-
-    renderEntries();
-    scrollToProjectFromHash();
-    window.addEventListener("hashchange", scrollToProjectFromHash);
-    window.addEventListener("pageshow", (event) => {
-      if (event.persisted) scrollToProjectFromHash();
+    window.addEventListener("afterprint", () => {
+      document.querySelectorAll("details").forEach((item, index) => { item.open = savedDisclosure[index] ?? item.open; });
     });
   </script>
 </body>

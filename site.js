@@ -1,7 +1,7 @@
 (() => {
   const navigation = [
-    { id: "bio", label: "Bio", href: "bio.html" },
-    { id: "projects", label: "Projects", href: "index.html" },
+    { id: "bio", label: "Bio", href: "index.html" },
+    { id: "projects", label: "Projects", href: "projects.html" },
     { id: "cad", label: "CAD Skills", href: "cad.html" },
     { id: "other", label: "Other", href: "other.html" }
   ];

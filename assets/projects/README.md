@@ -1,1 +1,1 @@
-Place the real CAD exports, diagrams and project photos in this folder. Reference each file from the relevant project's `images` array in `index.html`. Use descriptive filenames and write accurate alt text and captions.
+Place the real CAD exports, diagrams and project photos in this folder. Reference each file from the relevant project's `images` array in `entries.js`. Use descriptive filenames and write accurate alt text and captions.

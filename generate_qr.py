@@ -1,4 +1,4 @@
-"""Create direct-link PNG and SVG QR codes for the published timeline."""
+"""Create PNG and SVG QR codes for the portfolio home (Bio page)."""
 
 from pathlib import Path
 
