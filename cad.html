@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="CAD models, assemblies and drawings by Hynarong Eang, Mechanical Engineering student at RMIT University, Melbourne.">
+  <title>Hynarong Eang | Engineering Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top" data-page="cad">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div id="site-header"></div>
+  <main id="main-content" class="page-main">
+    <header class="page-heading">
+      <h1>CAD Skills</h1>
+      <p class="page-heading__intro">CAD models, assemblies and drawings, grouped by software.</p>
+    </header>
+    <div id="cad-work"></div>
+  </main>
+  <div id="site-footer"></div>
+
+  <dialog class="lightbox" id="cad-lightbox" aria-label="Expanded CAD project photo">
+    <div class="lightbox__frame">
+      <button class="close-button" id="cad-lightbox-close" type="button" aria-label="Close expanded photo">Close ×</button>
+      <button class="lightbox-arrow lightbox-arrow--prev" id="cad-photo-prev" type="button" aria-label="Previous photo">←</button>
+      <img id="cad-lightbox-image" alt="">
+      <button class="lightbox-arrow lightbox-arrow--next" id="cad-photo-next" type="button" aria-label="Next photo">→</button>
+      <p class="lightbox__caption" id="cad-lightbox-caption"></p>
+    </div>
+  </dialog>
+
+  <script src="site.js"></script>
+  <script src="entries.js"></script>
+  <script>
+    const CAD_WORK = [
+      {
+        software: "CATIA V5",
+        intro: "Used CATIA V5 to practise parametric part modelling, assembly design and engineering drawings.",
+        projects: [
+          {
+            id: "engine-cylinder-block",
+            title: "Engine Cylinder Block Design",
+            what: "A 3D engine cylinder block model in CATIA V5 to learn and practise CAD design tools.",
+            how: [
+              "Created fully constrained sketches and applied Pad, Pocket, Hole, Fillet and Chamfer.",
+              "Designed internal coolant channels, oil fill passages and mounting features, considering functionality, assembly and manufacturability."
+            ],
+            result: "A detailed 3D CAD model showing parametric design, engineering drawings and mechanical component development, and a better understanding of design principles and feature-based modelling.",
+            images: []
+          },
+          {
+            id: "flanged-pipe-assembly",
+            title: "Flanged Pipe Assembly",
+            what: "A flanged pipe assembly in CATIA V5 to understand how mechanical parts connect and work together.",
+            how: [
+              "Created the individual pipe and flange parts.",
+              "Used assembly constraints to position, align and connect the parts."
+            ],
+            result: "A better understanding of CATIA Assembly Design, part positioning, assembly constraints and how components fit together into a complete system.",
+            images: []
+          },
+          {
+            id: "radial-engine-assembly",
+            title: "Radial Engine Assembly",
+            what: "A radial engine assembly in CATIA V5 to understand how components fit together and practise producing large assembly drawings.",
+            how: [
+              "Modelled and assembled the components in CATIA Assembly Design.",
+              "Applied constraints to position and align the pistons, connecting rods and crankcase.",
+              "Produced a detailed assembly drawing with views, dimensions and annotations."
+            ],
+            result: "A better understanding of mechanical assemblies, assembly constraints and engineering drawing standards, and a better ability to create large, accurate assembly drawings.",
+            images: []
+          }
+        ]
+      },
+      {
+        software: "SolidWorks",
+        intro: "Used SolidWorks for rover design, CAD modelling, assemblies and engineering drawings.",
+        projects: [
+          {
+            id: "rover-design-project",
+            title: "Rover Design Project",
+            what: "Designed a rover in SolidWorks to meet project requirements using engineering calculations, component selection and 3D CAD modelling.",
+            how: [
+              "Analysed the requirements and calculated payload, travel distance, wheel size, motor selection, battery capacity and power consumption.",
+              "Selected suitable mechanical and electrical components, then designed and assembled the complete rover.",
+              "Refined the design iteratively for functionality, manufacturability and performance."
+            ],
+            result: "A rover design that met the project requirements, strengthening SolidWorks, engineering calculation, mechanical design, CAD assembly and systems integration skills.",
+            images: []
+          },
+          {
+            id: "lunar-rover-wheel-cad",
+            title: "Lunar Rover Wheel Design",
+            what: "Modelled and detailed a wheel for a lunar rover, then contributed to the team assembly model.",
+            how: [
+              "Modelled and detailed the rover wheel in SolidWorks, producing preliminary and detailed drawings.",
+              "Contributed to the group assembly model and presentation, as recorded in the group journal."
+            ],
+            result: "Produced preliminary and detailed drawings and contributed to the group assembly model and presentation.",
+            images: [],
+            sourceProjectId: "lunar-rover-wheel",
+            projectHref: "index.html#lunar-rover-wheel"
+          },
+          {
+            id: "pressure-vessel-drawings-as1100",
+            title: "Pressure Vessel Drawings (AS 1100)",
+            badge: "In progress",
+            what: "3D CAD models and detailed engineering drawings in SolidWorks following AS 1100.",
+            how: ["Developing 3D CAD models and detailed engineering drawings in SolidWorks following AS 1100."],
+            result: "In progress.",
+            images: []
+          }
+        ]
+      },
+      {
+        software: "Onshape",
+        intro: "Used Onshape to design and assemble the RMIT Rover Team payload-handling gripper.",
+        projects: [
+          {
+            id: "onshape-gripper-design",
+            title: "Gripper Mechanism Design (RMIT Rover Team)",
+            what: "Designed a robotic gripper in Onshape for the RMIT Rover Team, to support payload handling during competition tasks.",
+            how: [
+              "Designed and assembled the gripper mechanism from the project requirements.",
+              "Worked with team members to evaluate design concepts and improve the mechanism over multiple design iterations.",
+              "Refined the design using feedback from design reviews, considering functionality, manufacturability and assembly."
+            ],
+            result: "A functional gripper design, and a better understanding of the iterative design process of testing, feedback and continuous improvement; improved mechanical design, CAD modelling, teamwork and problem-solving skills.",
+            images: [],
+            photoSlots: [
+              { src: "cad/onshape-gripper-old-design.jpg", alt: "Old design of the RMIT Rover Team gripper", caption: "Old design" },
+              { src: "cad/onshape-gripper-v1.jpg", alt: "New design V1 of the RMIT Rover Team gripper", caption: "New design V1" },
+              { src: "cad/onshape-gripper-v2.jpg", alt: "New design V2 of the RMIT Rover Team gripper", caption: "New design V2" },
+              { src: "cad/onshape-gripper-v3.jpg", alt: "New design V3 of the RMIT Rover Team gripper", caption: "New design V3" }
+            ]
+          }
+        ]
+      }
+    ];
+
+    const escapeHTML = (value) => String(value).replace(/[&<>"']/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" })[character]);
+    const cadWorkRoot = document.getElementById("cad-work");
+    const cadLightbox = document.getElementById("cad-lightbox");
+    const cadLightboxImage = document.getElementById("cad-lightbox-image");
+    const cadLightboxCaption = document.getElementById("cad-lightbox-caption");
+    let activePhotos = [];
+    let activePhotoIndex = 0;
+    let photoTrigger = null;
+
+    function photosFor(project) {
+      if (project.sourceProjectId) return window.ENTRIES.find((entry) => entry.id === project.sourceProjectId)?.images || [];
+      if (project.photoSlots?.length) return project.photoSlots;
+      return project.images || [];
+    }
+
+    function placeholderTile(label, title) {
+      return `<div class="cad-photo-placeholder" role="img" aria-label="${escapeHTML(label)}"><span class="cad-photo-placeholder__label">${escapeHTML(label)}</span><span class="cad-photo-caption">${escapeHTML(title)}</span></div>`;
+    }
+
+    function galleryMarkup(project) {
+      const photos = photosFor(project);
+      if (!photos.length) return `<div class="cad-gallery">${placeholderTile("Project images to add", project.title)}</div>`;
+      return `<div class="cad-gallery" role="group" aria-label="${escapeHTML(project.title)} photo gallery">${photos.map((photo, index) => `
+        <button class="cad-photo-button" type="button" data-cad-photo="${escapeHTML(project.id)}" data-photo-index="${index}" aria-label="Enlarge ${escapeHTML(photo.caption || photo.alt)}">
+          <img class="cad-photo-image" src="${escapeHTML(photo.src)}" alt="${escapeHTML(photo.alt)}" loading="lazy" decoding="async">
+          <span class="cad-photo-caption">${escapeHTML(photo.caption || photo.alt)}</span>
+        </button>`).join("")}</div>`;
+    }
+
+    function renderProject(project) {
+      const how = project.how.map((step) => `<li>${escapeHTML(step)}</li>`).join("");
+      return `<article class="cad-project" id="cad-${escapeHTML(project.id)}">
+        <div class="cad-project__body">
+          <h3 class="cad-project__heading">${escapeHTML(project.title)}${project.badge ? `<span class="status-badge">${escapeHTML(project.badge)}</span>` : ""}</h3>
+          <p class="cad-project__field"><strong>What:</strong> ${escapeHTML(project.what)}</p>
+          <div class="cad-project__field"><strong>How:</strong><ul class="cad-project__how">${how}</ul></div>
+          <p class="cad-project__field"><strong>Result:</strong> ${escapeHTML(project.result)}</p>
+          ${project.projectHref ? `<a class="cad-project__link" href="${escapeHTML(project.projectHref)}" aria-label="View project: ${escapeHTML(project.title)}">View Project on Projects Page ↗</a>` : ""}
+        </div>
+        ${galleryMarkup(project)}
+      </article>`;
+    }
+
+    cadWorkRoot.innerHTML = CAD_WORK.map((group) => `
+      <section class="software-group" aria-labelledby="software-${escapeHTML(group.software.replace(/[^a-z0-9]+/gi, "-").toLowerCase())}">
+        <h2 class="section-heading" id="software-${escapeHTML(group.software.replace(/[^a-z0-9]+/gi, "-").toLowerCase())}">${escapeHTML(group.software)}</h2>
+        <p class="software-group__intro">${escapeHTML(group.intro)}</p>
+        <div class="cad-projects">${group.projects.map(renderProject).join("")}</div>
+      </section>`).join("");
+
+    document.addEventListener("error", (event) => {
+      const image = event.target;
+      if (!(image instanceof HTMLImageElement)) return;
+      if (image.id === "cad-lightbox-image") {
+        image.hidden = true;
+        if (!cadLightbox.querySelector(".cad-lightbox-placeholder")) {
+          const missingPhoto = document.createElement("div");
+          missingPhoto.className = "cad-photo-placeholder cad-lightbox-placeholder";
+          missingPhoto.setAttribute("role", "img");
+          missingPhoto.setAttribute("aria-label", image.alt || "Project photo unavailable");
+          missingPhoto.textContent = image.alt || "Project photo unavailable";
+          image.before(missingPhoto);
+        }
+        return;
+      }
+      if (!image.classList.contains("cad-photo-image")) return;
+      const button = image.closest(".cad-photo-button");
+      if (!button) return;
+      const label = image.alt || "Project photo to add";
+      const caption = button.querySelector(".cad-photo-caption")?.textContent || label;
+      button.outerHTML = placeholderTile(label, caption);
+    }, true);
+
+    function showPhoto(index) {
+      if (!activePhotos.length) return;
+      activePhotoIndex = (index + activePhotos.length) % activePhotos.length;
+      const photo = activePhotos[activePhotoIndex];
+      cadLightbox.querySelector(".cad-lightbox-placeholder")?.remove();
+      cadLightboxImage.hidden = false;
+      cadLightboxImage.src = photo.src;
+      cadLightboxImage.alt = photo.alt;
+      cadLightboxCaption.textContent = photo.caption || photo.alt;
+      document.getElementById("cad-photo-prev").hidden = activePhotos.length < 2;
+      document.getElementById("cad-photo-next").hidden = activePhotos.length < 2;
+    }
+
+    document.addEventListener("click", (event) => {
+      const trigger = event.target.closest("[data-cad-photo]");
+      if (!trigger) return;
+      const project = CAD_WORK.flatMap((group) => group.projects).find((item) => item.id === trigger.dataset.cadPhoto);
+      if (!project) return;
+      activePhotos = photosFor(project);
+      activePhotoIndex = Number(trigger.dataset.photoIndex) || 0;
+      photoTrigger = trigger;
+      showPhoto(activePhotoIndex);
+      cadLightbox.showModal();
+      document.getElementById("cad-lightbox-close").focus();
+    });
+
+    document.getElementById("cad-photo-prev").addEventListener("click", () => showPhoto(activePhotoIndex - 1));
+    document.getElementById("cad-photo-next").addEventListener("click", () => showPhoto(activePhotoIndex + 1));
+    document.getElementById("cad-lightbox-close").addEventListener("click", () => cadLightbox.close());
+    cadLightbox.addEventListener("click", (event) => { if (event.target === cadLightbox) cadLightbox.close(); });
+    cadLightbox.addEventListener("close", () => photoTrigger?.focus());
+    cadLightbox.addEventListener("keydown", (event) => {
+      if (!activePhotos.length) return;
+      if (event.key === "ArrowRight") { event.preventDefault(); showPhoto(activePhotoIndex + 1); }
+      if (event.key === "ArrowLeft") { event.preventDefault(); showPhoto(activePhotoIndex - 1); }
+    });
+  </script>
+</body>
+</html>

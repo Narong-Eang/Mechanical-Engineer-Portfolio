@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Work experience for Hynarong Eang, Mechanical Engineering student at RMIT University, Melbourne.">
+  <title>Hynarong Eang | Engineering Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top" data-page="other">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div id="site-header"></div>
+  <main id="main-content" class="page-main">
+    <header class="page-heading"><h1>Other</h1><p class="page-heading__intro">Work experience beyond engineering projects.</p></header>
+    <section class="section-block" aria-labelledby="experience-heading">
+      <h2 class="section-heading" id="experience-heading">Work Experience</h2>
+      <div id="experience-list"></div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="site.js"></script>
+  <script>
+    const OTHER_EXPERIENCE = [
+      {
+        role: "Fulfilment Team Member",
+        subtitle: "Online Shopper",
+        organisation: "Woolworths Supermarkets",
+        type: "Part-time",
+        dates: "Jun 2024 – Present",
+        location: "Braybrook, Victoria, Australia, On-site",
+        intro: "Responsible for delivering a seamless online shopping experience by ensuring every customer order is picked with accuracy, quality, and care.",
+        duties: [
+          { label: "Order Fulfilment", text: "Efficiently select and pack grocery items for online orders, adhering to customer specifications and completing orders within tight timeframes." },
+          { label: "Quality Control", text: "Inspect products for freshness, quality, and expiration dates to consistently uphold company standards." },
+          { label: "Customer Communication", text: "Liaise with customers regarding order details, substitutions, and special requests to ensure a positive and personalised shopping experience." },
+          { label: "Organisation and Efficiency", text: "Organise items strategically for easy retrieval and packing, optimising workflow to meet high-volume order demands." },
+          { label: "Systems and Technology", text: "Utilise online shopping platforms and inventory management systems to process and track orders accurately." },
+          { label: "Safety and Compliance", text: "Adhere to all workplace safety protocols and guidelines to maintain a safe and productive working environment." }
+        ],
+        tags: ["Order fulfilment", "Quality control", "Customer communication", "Workplace safety"],
+        logo: "photos/woolworths-logo.png"
+      }
+    ];
+
+    const escapeHTML = (value) => String(value).replace(/[&<>"']/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" })[character]);
+    const experienceList = document.getElementById("experience-list");
+    function renderExperience(role) {
+      const logo = role.logo ? `<img class="company-logo" src="${escapeHTML(role.logo)}" alt="Woolworths Supermarkets logo" hidden>` : "";
+      const roleHeading = role.role ? `<h3 class="job-title">${escapeHTML(role.role)}</h3>` : "";
+      const subtitle = role.subtitle ? `<p class="job-subtitle">${escapeHTML(role.subtitle)}</p>` : "";
+      const organisation = role.organisation ? `<p class="organisation">${escapeHTML(role.organisation)}</p>` : "";
+      const metadata = [role.type, role.dates, role.location].filter(Boolean).map((value) => `<li>${escapeHTML(value)}</li>`).join("");
+      const intro = role.intro ? `<p class="intro">${escapeHTML(role.intro)}</p>` : "";
+      const dutyItems = Array.isArray(role.duties) ? role.duties.map((duty) => {
+        const label = duty?.label ? `<strong>${escapeHTML(duty.label)}:</strong>` : "";
+        const text = duty?.text ? escapeHTML(duty.text) : "";
+        return label || text ? `<li>${label}${label && text ? " " : ""}${text}</li>` : "";
+      }).filter(Boolean).join("") : "";
+      const duties = dutyItems ? `<ul class="duties">${dutyItems}</ul>` : "";
+      const tags = Array.isArray(role.tags) && role.tags.length ? `<ul class="tags" aria-label="Work skills">${role.tags.map((tag) => `<li class="tag">${escapeHTML(tag)}</li>`).join("")}</ul>` : "";
+      return `<article class="experience-card">${logo}${roleHeading}${subtitle}${organisation}${metadata ? `<ul class="metadata" aria-label="Role details">${metadata}</ul>` : ""}${intro}${duties}${tags}</article>`;
+    }
+    experienceList.innerHTML = OTHER_EXPERIENCE.map(renderExperience).join("");
+    experienceList.querySelectorAll(".company-logo").forEach((image) => {
+      image.addEventListener("load", () => { image.hidden = false; }, { once: true });
+      image.addEventListener("error", () => image.remove(), { once: true });
+    });
+  </script>
+</body>
+</html>
